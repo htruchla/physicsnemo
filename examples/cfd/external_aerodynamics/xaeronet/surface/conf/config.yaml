@@ -19,7 +19,7 @@ hydra:
     chdir: true
     name: XAeroNetS
   run:
-    dir: ./outputs/${hydra:job.name}
+    dir: /media/hana/DATA/XAERONET/outputs/${hydra:job.name}
 
 # ┌───────────────────────────────────────────┐
 # │            Data Preprocessing             │
@@ -28,7 +28,7 @@ hydra:
 num_nodes: [100000, 200000, 400000]                  # Number of nodes in the graphs
 node_degree: 6                                       # Degree of the nodes in the graphs
 num_partitions: 3                                    # Number of partitions for each graph
-data_path: /data/drivaer_aws/drivaer_data_full       # Path to the raw data
+data_path:  /media/hana/DATA/XAERONET      # Path to the raw data
 num_preprocess_workers: 32                           # Number of workers for data preprocessing
 save_point_clouds: false                             # Save point clouds for the preprocessed data
 

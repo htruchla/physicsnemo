@@ -8,7 +8,7 @@
 # It also includes checks to prevent overloading the system by limiting the number of parallel downloads.
 
 # Set the local directory to download the files
-LOCAL_DIR="./drivaer_data_full"  # <--- This is the directory where the files will be downloaded.
+LOCAL_DIR="/media/hana/DATA"  # <--- This is the directory where the files will be downloaded.
 
 # Set the S3 bucket and prefix
 S3_BUCKET="caemldatasets"
