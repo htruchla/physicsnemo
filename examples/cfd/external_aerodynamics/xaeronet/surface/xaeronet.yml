@@ -1,0 +1,6 @@
+name: xaeronet
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+prefix: /home/hana/miniconda3/envs/xaeronet
