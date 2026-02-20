@@ -16,11 +16,11 @@
 #SBATCH --partition=cpu           # Replace with Rorqual's CPU partition name (check: sinfo)
 
 # ---------- Environment ----------
-module purge
+module --force purge
 module load python/3.11.5
 module load cuda/12.6
 
-source $SLURM_SUBMIT_DIR/venv/bin/activate
+source $SLURM_SUBMIT_DIR/xaeronet/bin/activate
 
 # ---------- Setup ----------
 cd $SLURM_SUBMIT_DIR
