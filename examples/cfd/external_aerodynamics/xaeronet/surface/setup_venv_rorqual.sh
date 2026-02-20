@@ -20,15 +20,12 @@ PYTHON_MODULE="python/3.11.5"
 CUDA_MODULE="cuda/12.6"
 VENV_DIR="$PWD/xaeronet"
 
-TORCH_VERSION="2.6.0"
-TORCHVISION_VERSION="0.21.0"
-
-# PyG wheels must reference the CUDA version; cu126 matches CUDA 12.6
-TORCH_CUDA_TAG="cu126"
-PYG_WHEEL_URL="https://data.pyg.org/whl/torch-${TORCH_VERSION}+${TORCH_CUDA_TAG}.html"
+# Target torch 2.9.1 — the CC wheelhouse PyG extensions (+torch29.computecanada)
+# require torch~=2.9.0. Using 2.6.0 causes pip to upgrade torch anyway and
+# break torchvision, so we target 2.9.1 from the start for consistency.
+TORCH_VERSION="2.9.1"
 TORCH_GEOMETRIC_VERSION="2.6.1"
-# PyG extension versions are resolved automatically — CC wheelhouse
-# serves +computecanada builds that do not match strict version pins.
+# PyG extension versions resolved automatically from CC wheelhouse.
 
 # --------------------------------------------------------------------------- #
 # 2. Load modules
@@ -67,15 +64,12 @@ pip install --upgrade pip setuptools wheel
 
 echo ""
 echo ">>> Installing PyTorch ${TORCH_VERSION}..."
-# On Compute Canada / Rorqual, pip always resolves torch from the CC wheelhouse
-# (/cvmfs/), which serves +computecanada builds compiled WITH CUDA support.
-# Pinning +cu126 causes a "no matching distribution" error because that local
-# version tag does not exist in the CC index. We let CC serve their build and
-# verify CUDA was compiled in via torch.version.cuda (not cuda.is_available(),
-# which is always False on login nodes that have no GPUs).
+# Let CC wheelhouse serve torch and a compatible torchvision.
+# Pinning torchvision causes version conflicts because CC's torchvision build
+# tags (+computecanada) do not match standard version strings.
 pip install \
     "torch==${TORCH_VERSION}" \
-    "torchvision==${TORCHVISION_VERSION}"
+    torchvision
 
 python -c "
 import torch
@@ -98,19 +92,25 @@ echo ">>> Installing PyTorch Geometric ${TORCH_GEOMETRIC_VERSION}..."
 pip install "torch-geometric==${TORCH_GEOMETRIC_VERSION}"
 
 echo ">>> Installing PyG extensions (scatter, sparse, cluster, spline-conv)..."
-# No strict version pins — CC wheelhouse has these as +computecanada or +pt26cu126
-# builds that are incompatible with exact version matching. We search both the
-# PyG wheel page and PyPI and let pip pick the best compatible version.
+# CC wheelhouse has +torch29.computecanada builds for all extensions that are
+# compatible with torch 2.9.1. No --find-links needed — CC resolves these natively.
 pip install \
     torch-scatter \
     torch-sparse \
     torch-cluster \
-    torch-spline-conv \
-    --find-links "$PYG_WHEEL_URL"
+    torch-spline-conv
 
 # --------------------------------------------------------------------------- #
 # 6. Install remaining requirements
 # --------------------------------------------------------------------------- #
+
+echo ""
+echo ">>> Installing nvidia-physicsnemo-sym (requires --no-build-isolation)..."
+# physicsnemo-sym's setup.py imports torch at build time. pip's default isolated
+# build environment does not inherit the venv, causing "No module named torch".
+# --no-build-isolation makes pip use the current environment for building,
+# where torch is already installed.
+pip install --no-build-isolation nvidia-physicsnemo-sym
 
 echo ""
 echo ">>> Installing remaining requirements from requirements.txt..."

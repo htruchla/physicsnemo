@@ -1,5 +1,4 @@
 nvidia-physicsnemo>=0.8.0
-nvidia-physicsnemo-sym>=0.8.0
 vtk>=9.3.0
 pyvista>=0.43.0
 numpy>=1.26.0                    # CC wheelhouse installs numpy 2.x; physicsnemo supports it
