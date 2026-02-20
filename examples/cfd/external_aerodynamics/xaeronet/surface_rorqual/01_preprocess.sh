@@ -13,19 +13,24 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 
+echo " ***********Loading modules************** "
 
 # ---------- Environment ----------
 module --force purge
+
 module load StdEnv/2023          
 module load python/3.11.5
 module load cuda/12.6
 module load vtk/9.3.0
 
-
+echo " ********Modules loaded exporting cud a directory  ********"
 export CUDA_HOME=$(dirname $(dirname $(which nvcc)))
 
+echo " **************Setting path for env ***************"
 VENV_PATH="$HOME/envs/xaeronet"
 source "$VENV_PATH/bin/activate"
+
+echo "****************Installing pyvista *********************"
 pip install --upgrade --force-reinstall pyvista
 
 # ---------- Setup ----------

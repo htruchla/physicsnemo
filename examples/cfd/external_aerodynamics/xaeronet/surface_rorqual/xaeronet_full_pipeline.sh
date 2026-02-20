@@ -30,18 +30,17 @@ fi
 # Verify Hydra config exists
 if [ ! -f "$SCRIPT_DIR/conf/config.yaml" ]; then
     echo "ERROR: Hydra config not found at $SCRIPT_DIR/conf/config.yaml"
-    echo "       All three Python scripts require this file."
     exit 1
 fi
 
 mkdir -p "$SCRIPT_DIR/logs"
 
-echo "=================================================="
-echo " Submitting DrivAer pipeline"
+echo "**************************************************"
+echo " Submitting XAeroNet-S pipeline"
 echo " Working directory: $SCRIPT_DIR"
-echo "=================================================="
+echo "**************************************************"
 
-# Stage 1 — Preprocessing (CPU)
+# Stage 1 — Preprocessing
 JOB1=$(sbatch --parsable "$SCRIPT_DIR/01_preprocess.sh")
 echo " Stage 1  preprocess     -> Job $JOB1"
 
@@ -49,19 +48,14 @@ echo " Stage 1  preprocess     -> Job $JOB1"
 JOB2=$(sbatch --parsable --dependency=afterrok:$JOB1 "$SCRIPT_DIR/02_val_test_split.sh")
 echo " Stage 2 data split  -> Job $JOB2"
 
-# Stage 3 — Compute statistics (CPU), depends on Stage 1
+# Stage 3 — Compute statistics 
 JOB3=$(sbatch --parsable --dependency=afterok:$JOB2 "$SCRIPT_DIR/03_compute_stats.sh")
 echo " Stage 2  compute_stats  -> Job $JOB3  (after $JOB2)"
 
-# Stage 4 — Training (GPU), depends on Stage 2
+# Stage 4 — Training
 JOB4=$(sbatch --parsable --dependency=afterok:$JOB3 "$SCRIPT_DIR/04_train.sh")
 echo " Stage 3  train          -> Job $JOB4  (after $JOB3)"
 
-echo "=================================================="
-echo " All stages submitted. Useful commands:"
-echo "   squeue -u \$USER                   # view job queue"
-echo "   tail -f logs/preprocess_${JOB1}.out"
-echo "   tail -f logs/stats_${JOB2}.out"
-echo "   tail -f logs/train_${JOB3}.out"
-echo "   scancel $JOB1 $JOB2 $JOB3         # cancel all stages"
-echo "=================================================="
+echo "**************************************************"
+echo " All stages submitted"
+echo "**************************************************"
