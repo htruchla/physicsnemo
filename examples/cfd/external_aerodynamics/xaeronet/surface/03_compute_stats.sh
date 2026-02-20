@@ -15,6 +15,7 @@
 
 # ---------- Environment ----------
 module --force purge
+module load StdEnv/2023          
 module load python/3.11.5
 module load cuda/12.6
 module load vtk/9.3.0

@@ -16,9 +16,10 @@
 #SBATCH --gres=gpu:4              # GPUs per node — adjust to match ntasks-per-node
 # ---------- Environment ----------
 module --force purge
+module load StdEnv/2023          
 module load python/3.11.5
 module load cuda/12.6
-module load vtk//9.3.0
+module load vtk/9.3.0
 
 export CUDA_HOME=$(dirname $(dirname $(which nvcc)))
 VENV_PATH="$HOME/envs/xaeronet"
