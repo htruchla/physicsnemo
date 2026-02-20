@@ -20,12 +20,11 @@ PYTHON_MODULE="python/3.11.5"
 CUDA_MODULE="cuda/12.6"
 VENV_DIR="$PWD/xaeronet"
 
-# cu126 matches CUDA 12.6; torch 2.6.0 is the latest stable release for cu126
-TORCH_CUDA_TAG="cu126"
 TORCH_VERSION="2.6.0"
 TORCHVISION_VERSION="0.21.0"
 
-# PyG extension wheels must match torch + CUDA exactly
+# PyG wheels must reference the CUDA version; cu126 matches CUDA 12.6
+TORCH_CUDA_TAG="cu126"
 PYG_WHEEL_URL="https://data.pyg.org/whl/torch-${TORCH_VERSION}+${TORCH_CUDA_TAG}.html"
 TORCH_GEOMETRIC_VERSION="2.6.1"
 TORCH_SCATTER_VERSION="2.1.4"
@@ -69,30 +68,27 @@ pip install --upgrade pip setuptools wheel
 # --------------------------------------------------------------------------- #
 
 echo ""
-echo ">>> Installing PyTorch ${TORCH_VERSION}+${TORCH_CUDA_TAG}..."
-# Pin the full local version tag (e.g. torch==2.6.0+cu126) so pip cannot
-# match the Compute Canada wheelhouse build (torch==2.6.0+computecanada),
-# which is compiled without CUDA support.
+echo ">>> Installing PyTorch ${TORCH_VERSION}..."
+# On Compute Canada / Rorqual, pip always resolves torch from the CC wheelhouse
+# (/cvmfs/), which serves +computecanada builds compiled WITH CUDA support.
+# Pinning +cu126 causes a "no matching distribution" error because that local
+# version tag does not exist in the CC index. We let CC serve their build and
+# verify CUDA was compiled in via torch.version.cuda (not cuda.is_available(),
+# which is always False on login nodes that have no GPUs).
 pip install \
-    "torch==${TORCH_VERSION}+${TORCH_CUDA_TAG}" \
-    "torchvision==${TORCHVISION_VERSION}+${TORCH_CUDA_TAG}" \
-    --index-url "https://download.pytorch.org/whl/${TORCH_CUDA_TAG}" \
-    --extra-index-url "https://pypi.org/simple"
+    "torch==${TORCH_VERSION}" \
+    "torchvision==${TORCHVISION_VERSION}"
 
-# NOTE: Login nodes have no GPUs, so cuda.is_available() is always False here.
-# CUDA availability is only meaningful inside a GPU job. We check the build
-# version string instead, which is set at compile time regardless of hardware.
 python -c "
 import torch
 cuda_build = torch.version.cuda
 if cuda_build is None:
     print('  [FAIL] torch installed WITHOUT CUDA support.')
     print(f'         Version: {torch.__version__}')
-    print('         Expected +cu126 build — CC wheelhouse may have intercepted.')
     raise SystemExit(1)
 else:
-    print(f'  [OK]   torch {torch.__version__} | built for CUDA {cuda_build}')
-    print('         (GPU count will be >0 only inside a GPU job, not on login node)')
+    print(f'  [OK]   torch {torch.__version__} | compiled for CUDA {cuda_build}')
+    print('         (cuda.is_available() will be True only inside a GPU job)')
 "
 
 # --------------------------------------------------------------------------- #
