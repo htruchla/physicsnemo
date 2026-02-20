@@ -14,7 +14,7 @@
 #SBATCH --ntasks-per-node=4       # One task per GPU; must equal --gres=gpu:N below
 
 #SBATCH --gres=gpu:4              # GPUs per node — adjust to match ntasks-per-node
-#SBATCH --partition=gpu           # Replace with Rorqual's GPU partition name (check: sinfo)
+#SBATCH --partition=gpu 
 
 # ---------- Environment ----------
 module --force purge

@@ -13,7 +13,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 
-#SBATCH --partition=cpu           # Replace with Rorqual's CPU partition name (check: sinfo)
+#SBATCH --partition=cpubase
 
 # ---------- Environment ----------
 module --force purge
