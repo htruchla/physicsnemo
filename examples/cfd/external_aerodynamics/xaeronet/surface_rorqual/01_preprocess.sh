@@ -36,6 +36,7 @@ source "$VENV_PATH/bin/activate"
 echo "****************Installing pyvista *********************"
 pip install --upgrade --force-reinstall pyvista
 
+echo "****************Finished pyvista *********************"
 # ---------- Setup ----------
 cd $SLURM_SUBMIT_DIR
 mkdir -p logs partitions point_clouds
