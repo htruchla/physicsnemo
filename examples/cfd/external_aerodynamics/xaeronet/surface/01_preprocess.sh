@@ -19,6 +19,7 @@
 module --force purge
 module load python/3.11.5
 module load cuda/12.6
+module load vtk/9.3.0
 
 source $SLURM_SUBMIT_DIR/xaeronet/bin/activate
 

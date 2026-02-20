@@ -36,6 +36,7 @@ module --force purge
 module load StdEnv/2023       # Reload Compute Canada standard env first
 module load "$PYTHON_MODULE"
 module load "$CUDA_MODULE"
+module load vtk/9.3.0         # VTK provided as system module — no pip wheel on CC
 echo "    Python : $(python --version)"
 echo "    CUDA   : $CUDA_MODULE"
 
@@ -105,12 +106,34 @@ pip install \
 # --------------------------------------------------------------------------- #
 
 echo ""
-echo ">>> Installing nvidia-physicsnemo-sym (requires --no-build-isolation)..."
-# physicsnemo-sym's setup.py imports torch at build time. pip's default isolated
-# build environment does not inherit the venv, causing "No module named torch".
-# --no-build-isolation makes pip use the current environment for building,
-# where torch is already installed.
-pip install --no-build-isolation nvidia-physicsnemo-sym
+echo ">>> Linking system VTK into venv..."
+# VTK has no pip wheel on Compute Canada. It is provided as a system module.
+# We load the vtk module and add its Python bindings to the venv via a .pth
+# file so all subsequent pip installs and Python processes can see it.
+module load vtk/9.3.0
+
+# After loading the module, the system Python can already import vtk.
+# We ask it directly for the path and write it to a .pth file in the venv.
+# A .pth file in site-packages is read at Python startup and its paths
+# are added to sys.path — making "import vtk" work inside the venv.
+VTK_SITE=$(python -c "import vtk, os; print(os.path.dirname(vtk.__file__))")
+
+if [ -n "$VTK_SITE" ]; then
+    echo "    VTK bindings at: $VTK_SITE"
+    echo "$VTK_SITE" > "$VENV_DIR/lib/python3.11/site-packages/vtk_system.pth"
+    echo "    Linked via vtk_system.pth"
+else
+    echo "    ERROR: Could not locate VTK after module load vtk/9.3.0"
+    exit 1
+fi
+
+echo ""
+echo ">>> Installing nvidia-physicsnemo-sym (--no-deps --no-build-isolation)..."
+# --no-deps: skip the vtk>=9.2.6 pip dependency since we provide it via the
+#            system module above. All other deps are already installed.
+# --no-build-isolation: setup.py imports torch at build time; this lets it
+#                       find torch from the current venv.
+pip install --no-build-isolation --no-deps nvidia-physicsnemo-sym
 
 echo ""
 echo ">>> Installing remaining requirements from requirements.txt..."
