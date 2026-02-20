@@ -115,7 +115,7 @@ pip install \
 echo ""
 echo ">>> Installing remaining requirements from requirements.txt..."
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-pip install -r "$SCRIPT_DIR/requirements.txt"
+pip install -r "$SCRIPT_DIR/requirements_rorqual.txt"
 
 # --------------------------------------------------------------------------- #
 # 7. Smoke test — verify every key import across all three scripts
