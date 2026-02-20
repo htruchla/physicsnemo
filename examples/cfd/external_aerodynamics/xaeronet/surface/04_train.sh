@@ -21,7 +21,8 @@ module load cuda/12.6
 module load vtk//9.3.0
 
 export CUDA_HOME=$(dirname $(dirname $(which nvcc)))
-source $SLURM_SUBMIT_DIR/xaeronet/bin/activate
+VENV_PATH="$HOME/envs/xaeronet"
+source "$VENV_PATH/bin/activate"
 
 # ---------- Setup ----------
 cd $SLURM_SUBMIT_DIR

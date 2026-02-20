@@ -15,10 +15,13 @@
 
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VENV_PATH="$HOME/envs/xaeronet"
+
+SCRIPT_DIR="$SLURM_SUBMIT_DIR"
+cd "$SCRIPT_DIR"
 
 # Verify venv exists before submitting anything
-if [ ! -f "$SCRIPT_DIR/xaeronet/bin/activate" ]; then
+if [ ! -f "$VENV_PATH/bin/activate" ]; then
     echo "ERROR: Virtual environment not found at $SCRIPT_DIR/xaeronet"
     echo "       Run setup_venv.sh first."
     exit 1
@@ -43,7 +46,7 @@ JOB1=$(sbatch --parsable "$SCRIPT_DIR/01_preprocess.sh")
 echo " Stage 1  preprocess     -> Job $JOB1"
 
 #Stage 2 - splitting the test and validation data
-JOB2=$(sbatch --parsable --dependency_afterrok:$JOB1 "$SCRIPT_DIR/02_val_test_split.sh")
+JOB2=$(sbatch --parsable --dependency=afterrok:$JOB1 "$SCRIPT_DIR/02_val_test_split.sh")
 echo " Stage 2 data split  -> Job $JOB2"
 
 # Stage 3 — Compute statistics (CPU), depends on Stage 1
