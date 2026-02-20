@@ -6,7 +6,7 @@
 #SBATCH --mem=256G
 #SBATCH --cpus-per-task=8         # CPU threads per GPU worker for data loading
 
-#SBATCH -- account=rrg-nadaraja-ac
+#SBATCH --account=rrg-nadaraja-ac
 #SBATCH --mail-user=hana.truchla@mail.mcgill.ca
 #SBATCH --mail-type=ALL
 

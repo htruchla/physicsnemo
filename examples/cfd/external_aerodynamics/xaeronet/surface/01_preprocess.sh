@@ -6,7 +6,7 @@
 #SBATCH --mem=128G
 #SBATCH --cpus-per-task=32        # Should match cfg.num_preprocess_workers in conf/config.yaml
 
-#SBATCH -- account=rrg-nadaraja-ac
+#SBATCH --account=rrg-nadaraja-ac
 #SBATCH --mail-user=hana.truchla@mail.mcgill.ca
 #SBATCH --mail-type=ALL
 
