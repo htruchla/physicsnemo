@@ -17,14 +17,17 @@ echo " ***********Loading modules************** "
 
 # ---------- Environment ----------
 module --force purge
-
-module load StdEnv/2023          
+echo " ***********Loading StdEnv/2023 at time $(date)************** "
+module load StdEnv/2023
+echo " ***********Loading python/3.11.5 at time $(date)************** "
 module load python/3.11.5
+echo " ***********Loading cuda/12.6 at time $(date)************** "
 module load cuda/12.6
+echo " ***********Loading vtk/9.3.0 at time $(date)************** "
 module load vtk/9.3.0
-
-echo " ********Modules loaded exporting cud a directory  ********"
+echo " ********Modules loaded exporting cuda directory  ********"
 export CUDA_HOME=$(dirname $(dirname $(which nvcc)))
+
 
 echo " **************Setting path for env ***************"
 VENV_PATH="$HOME/envs/xaeronet"
