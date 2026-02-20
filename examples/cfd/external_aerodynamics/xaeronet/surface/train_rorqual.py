@@ -30,7 +30,7 @@ experiment tracking.
 
 import os
 import sys
-import jsonfirefox
+import json
 import pyvista as pv
 import torch
 import hydra
