@@ -14,8 +14,6 @@
 #SBATCH --ntasks-per-node=4       # One task per GPU; must equal --gres=gpu:N below
 
 #SBATCH --gres=gpu:4              # GPUs per node — adjust to match ntasks-per-node
-#SBATCH --partition=gpu 
-
 # ---------- Environment ----------
 module --force purge
 module load python/3.11.5

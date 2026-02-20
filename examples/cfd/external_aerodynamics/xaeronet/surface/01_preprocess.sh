@@ -13,7 +13,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 
-#SBATCH --partition=cpubase
+
 # ---------- Environment ----------
 module --force purge
 module load python/3.11.5
