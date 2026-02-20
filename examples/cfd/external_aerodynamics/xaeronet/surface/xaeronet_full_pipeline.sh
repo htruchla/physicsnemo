@@ -1,18 +1,19 @@
 #!/bin/bash
-# Usage:
-#   bash pipeline_rorqual 8.sh
-#
-# This submits three jobs in sequence. Each stage only starts if the previous
-# one completed successfully (--dependency=afterok). If any stage fails, the
-# downstream jobs are automatically cancelled by SLURM.
-#
-# Before submitting:
-#   1. Run setup_venv.sh 
-#   2. Verify partition names in 01_preprocess.sh, 02_compute_stats.sh,
-#      and 03_train.sh match your Rorqual allocation (use: sinfo).
-#   3. Verify GPU counts in 03_train.sh match your allocation.
-#   4. Ensure conf/config.yaml exists and all paths inside it are correct.
-# =============================================================================
+#SBATCH --job-name=xaeronet_full_pipeline
+#SBATCH --output=logs/xaeronet_full_pipeline.out
+#SBATCH --error=logs/xaeronet_full_pipeline.err
+#SBATCH --time=12:00:00
+#SBATCH --mem=128G
+#SBATCH --cpus-per-task=32        # Should match cfg.num_preprocess_workers in conf/config.yaml
+
+#SBATCH -- account=rrg-nadaraja-ac
+#SBATCH --mail-user=hana.truchla@mail.mcgill.ca
+#SBATCH --mail-type=ALL
+
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+
+#SBATCH --partition=cpu           # Replace with Rorqual's CPU partition name (check: sinfo)
 
 set -euo pipefail
 
