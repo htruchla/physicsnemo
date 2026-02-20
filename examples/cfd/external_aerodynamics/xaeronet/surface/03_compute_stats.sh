@@ -23,6 +23,7 @@ module load vtk/9.3.0
 export CUDA_HOME=$(dirname $(dirname $(which nvcc)))
 VENV_PATH="$HOME/envs/xaeronet"
 source "$VENV_PATH/bin/activate"
+pip install --upgrade --force-reinstall pyvista
 
 # ---------- Setup ----------
 cd $SLURM_SUBMIT_DIR
