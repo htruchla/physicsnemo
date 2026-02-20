@@ -37,8 +37,14 @@ module load StdEnv/2023       # Reload Compute Canada standard env first
 module load "$PYTHON_MODULE"
 module load "$CUDA_MODULE"
 module load vtk/9.3.0         # VTK provided as system module — no pip wheel on CC
-echo "    Python : $(python --version)"
-echo "    CUDA   : $CUDA_MODULE"
+
+# Set CUDA_HOME explicitly — physicsnemo-sym's setup.py compiles CUDA extensions
+# and requires this variable. The cuda module sets CUDA_HOME on some systems but
+# not reliably on Rorqual; we derive it from nvcc's location to be safe.
+export CUDA_HOME=$(dirname $(dirname $(which nvcc)))
+echo "    Python    : $(python --version)"
+echo "    CUDA      : $CUDA_MODULE"
+echo "    CUDA_HOME : $CUDA_HOME"
 
 # --------------------------------------------------------------------------- #
 # 3. Create virtual environment
@@ -128,11 +134,17 @@ else
 fi
 
 echo ""
+echo ">>> Installing build prerequisites for nvidia-physicsnemo-sym..."
+# CC's scipy-stack puts its own 'pbr' on the path. That pbr imports
+# 'pkg_resources' which was removed from setuptools 82 (the CC venv version).
+# Installing pbr into the venv gives it a self-contained pkg_resources shim
+# and shadows the broken system pbr during the physicsnemo-sym build.
+pip install pbr
+
+echo ""
 echo ">>> Installing nvidia-physicsnemo-sym (--no-deps --no-build-isolation)..."
-# --no-deps: skip the vtk>=9.2.6 pip dependency since we provide it via the
-#            system module above. All other deps are already installed.
-# --no-build-isolation: setup.py imports torch at build time; this lets it
-#                       find torch from the current venv.
+# --no-deps: vtk>=9.2.6 is satisfied by the system module linked above.
+# --no-build-isolation: setup.py imports torch at build time; needs the venv.
 pip install --no-build-isolation --no-deps nvidia-physicsnemo-sym
 
 echo ""

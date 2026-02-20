@@ -1,5 +1,3 @@
-nvidia-physicsnemo>=0.8.0
-vtk>=9.3.0
 pyvista>=0.43.0
 numpy>=1.26.0                    # CC wheelhouse installs numpy 2.x; physicsnemo supports it
 scikit-learn>=1.4.0
@@ -8,3 +6,18 @@ omegaconf>=2.3.0
 tensorboard>=2.17.0
 wandb>=0.17.0
 tqdm>=4.66.0
+chaospy>=4.3.7
+numpoly<=1.3.4
+numpy-stl>=2.16
+h5py>=3.7.0
+mistune>=2.0
+ninja
+notebook>=7.2.2
+pint>=0.19.2
+symengine>=0.10.0
+termcolor>=2.1.1
+torch-optimizer>=0.3.0
+transforms3d>=0.3.1
+typing>=3.7,<3.8
+Cython>=0.29
+psutil>=5.8.0            

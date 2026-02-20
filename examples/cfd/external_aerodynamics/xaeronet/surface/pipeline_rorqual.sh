@@ -19,8 +19,8 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Verify venv exists before submitting anything
-if [ ! -f "$SCRIPT_DIR/venv/bin/activate" ]; then
-    echo "ERROR: Virtual environment not found at $SCRIPT_DIR/venv"
+if [ ! -f "$SCRIPT_DIR/xaeronet/bin/activate" ]; then
+    echo "ERROR: Virtual environment not found at $SCRIPT_DIR/xaeronet"
     echo "       Run setup_venv.sh first."
     exit 1
 fi
