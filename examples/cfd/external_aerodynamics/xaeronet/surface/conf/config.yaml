@@ -28,7 +28,7 @@ hydra:
 num_nodes: [100000, 200000, 400000]                  # Number of nodes in the graphs
 node_degree: 6                                       # Degree of the nodes in the graphs
 num_partitions: 3                                    # Number of partitions for each graph
-data_path:  /home/htruchla/links/scratch/XAERONET      # Path to the raw data
+data_path:  /home/htruchla/links/scratch/XAERONET/XAERONET_TRAIN      # Path to the raw data
 num_preprocess_workers: 32                           # Number of workers for data preprocessing
 save_point_clouds: false                             # Save point clouds for the preprocessed data
 
@@ -45,8 +45,8 @@ activation: silu                                     # Activation function
 # └───────────────────────────────────────────┘
 
 partitions_path: partitions                         # Path to the partitions (.bin files)
-validation_partitions_path: validation_partitions   # Path to the validation partitions (.bin files)
-test_partitions_path: test_partitions               # Path to the test partitions (.bin files)
+validation_partitions_path: /home/htruchla/links/scratch/XAERONET/XAERONET_VAL  # Path to the validation partitions (.bin files)
+test_partitions_path: /home/htruchla/links/scratch/XAERONET/XAERONET_TEST             # Path to the test partitions (.bin files)
 stats_file: global_stats.json                       # Path to the global statistics (.json file)
 checkpoint_filename: model_checkpoint.pth           # Filename of the model checkpoint
 num_epochs: 2000                                    # Number of epochs

@@ -41,15 +41,19 @@ echo "=================================================="
 
 # Stage 1 — Preprocessing (CPU)
 JOB1=$(sbatch --parsable "$SCRIPT_DIR/01_preprocess.sh")
-echo " Stage 1  preprocess     → Job $JOB1"
+echo " Stage 1  preprocess     -> Job $JOB1"
 
-# Stage 2 — Compute statistics (CPU), depends on Stage 1
-JOB2=$(sbatch --parsable --dependency=afterok:$JOB1 "$SCRIPT_DIR/02_compute_stats.sh")
-echo " Stage 2  compute_stats  → Job $JOB2  (after $JOB1)"
+#Stage 2 - splitting the test and validation data
+JOB2=$(sbatch --parsable --dependency_afterrok:$JOB1 "$SCRIPT_DIR/02_val_test_split.sh")
+echo " Stage 2 data split  -> Job $JOB2"
 
-# Stage 3 — Training (GPU), depends on Stage 2
-JOB3=$(sbatch --parsable --dependency=afterok:$JOB2 "$SCRIPT_DIR/03_train.sh")
-echo " Stage 3  train          → Job $JOB3  (after $JOB2)"
+# Stage 3 — Compute statistics (CPU), depends on Stage 1
+JOB3=$(sbatch --parsable --dependency=afterok:$JOB2 "$SCRIPT_DIR/03_compute_stats.sh")
+echo " Stage 2  compute_stats  -> Job $JOB3  (after $JOB2)"
+
+# Stage 4 — Training (GPU), depends on Stage 2
+JOB4=$(sbatch --parsable --dependency=afterok:$JOB3 "$SCRIPT_DIR/04_train.sh")
+echo " Stage 3  train          -> Job $JOB4  (after $JOB3)"
 
 echo "=================================================="
 echo " All stages submitted. Useful commands:"
