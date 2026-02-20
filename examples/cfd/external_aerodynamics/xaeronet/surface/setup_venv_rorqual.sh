@@ -27,10 +27,8 @@ TORCHVISION_VERSION="0.21.0"
 TORCH_CUDA_TAG="cu126"
 PYG_WHEEL_URL="https://data.pyg.org/whl/torch-${TORCH_VERSION}+${TORCH_CUDA_TAG}.html"
 TORCH_GEOMETRIC_VERSION="2.6.1"
-TORCH_SCATTER_VERSION="2.1.4"
-TORCH_SPARSE_VERSION="0.6.18"
-TORCH_CLUSTER_VERSION="1.6.3"
-TORCH_SPLINE_VERSION="1.2.2"
+# PyG extension versions are resolved automatically — CC wheelhouse
+# serves +computecanada builds that do not match strict version pins.
 
 # --------------------------------------------------------------------------- #
 # 2. Load modules
@@ -100,11 +98,14 @@ echo ">>> Installing PyTorch Geometric ${TORCH_GEOMETRIC_VERSION}..."
 pip install "torch-geometric==${TORCH_GEOMETRIC_VERSION}"
 
 echo ">>> Installing PyG extensions (scatter, sparse, cluster, spline-conv)..."
+# No strict version pins — CC wheelhouse has these as +computecanada or +pt26cu126
+# builds that are incompatible with exact version matching. We search both the
+# PyG wheel page and PyPI and let pip pick the best compatible version.
 pip install \
-    "torch-scatter==${TORCH_SCATTER_VERSION}" \
-    "torch-sparse==${TORCH_SPARSE_VERSION}" \
-    "torch-cluster==${TORCH_CLUSTER_VERSION}" \
-    "torch-spline-conv==${TORCH_SPLINE_VERSION}" \
+    torch-scatter \
+    torch-sparse \
+    torch-cluster \
+    torch-spline-conv \
     --find-links "$PYG_WHEEL_URL"
 
 # --------------------------------------------------------------------------- #
@@ -167,6 +168,13 @@ EOF
 echo ""
 echo "================================================================="
 echo " Environment ready: $VENV_DIR"
-echo " Activate manually with:"
+echo ""
+echo " To activate in your current shell:"
 echo "   source $VENV_DIR/bin/activate"
+echo ""
+echo " To deactivate:"
+echo "   deactivate"
+echo ""
+echo " The sbatch pipeline scripts activate it automatically."
+echo " When activated, your prompt will show: (xaeronet)"
 echo "================================================================="
