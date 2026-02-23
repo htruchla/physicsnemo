@@ -34,7 +34,7 @@ import numpy as np
 import torch
 import hydra
 
-# import torch_geometric as pyg
+import torch_geometric as pyg
 
 from tqdm import tqdm
 from concurrent.futures import ProcessPoolExecutor
