@@ -33,10 +33,10 @@ echo " **************Setting path for env ***************"
 VENV_PATH="$HOME/envs/xaeronet"
 source "$VENV_PATH/bin/activate"
 
-echo "****************Installing pyvista *********************"
+echo "****************Installing pyvista at $(date)*********************"
 pip install --upgrade --force-reinstall pyvista
 
-echo "****************Finished pyvista *********************"
+echo "****************Finished pyvista $(date)*********************"
 # ---------- Setup ----------
 cd $SLURM_SUBMIT_DIR
 mkdir -p logs partitions point_clouds

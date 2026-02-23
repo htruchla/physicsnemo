@@ -2,7 +2,7 @@
 #SBATCH --job-name=xaeronet_full_pipeline
 #SBATCH --output=logs/xaeronet_full_pipeline.out
 #SBATCH --error=logs/xaeronet_full_pipeline.err
-#SBATCH --time=12:00:00
+#SBATCH --time=00:30:00
 #SBATCH --mem=128G
 #SBATCH --cpus-per-task=32        # Should match cfg.num_preprocess_workers in conf/config.yaml
 
@@ -20,7 +20,7 @@ VENV_PATH="$HOME/envs/xaeronet"
 SCRIPT_DIR="$SLURM_SUBMIT_DIR"
 cd "$SCRIPT_DIR"
 
-# Verify venv exists before submitting anything
+# Verify venv exists before submitting
 if [ ! -f "$VENV_PATH/bin/activate" ]; then
     echo "ERROR: Virtual environment not found at $SCRIPT_DIR/xaeronet"
     echo "       Run setup_venv.sh first."
@@ -41,15 +41,15 @@ echo " Working directory: $SCRIPT_DIR"
 echo "**************************************************"
 
 # Stage 1 — Preprocessing
-JOB1=$(sbatch --parsable "$SCRIPT_DIR/01_preprocess.sh")
+JOB1=$(sbatch "$SCRIPT_DIR/01_preprocess.sh")
 echo " Stage 1  preprocess     -> Job $JOB1"
 
 #Stage 2 - splitting the test and validation data
-JOB2=$(sbatch --parsable --dependency=afterrok:$JOB1 "$SCRIPT_DIR/02_val_test_split.sh")
+JOB2=$(sbatch --dependency=afterrok:$JOB1 "$SCRIPT_DIR/02_val_test_split.sh")
 echo " Stage 2 data split  -> Job $JOB2"
 
 # Stage 3 — Compute statistics 
-JOB3=$(sbatch --parsable --dependency=afterok:$JOB2 "$SCRIPT_DIR/03_compute_stats.sh")
+JOB3=$(sbatch --dependency=afterok:$JOB2 "$SCRIPT_DIR/03_compute_stats.sh")
 echo " Stage 2  compute_stats  -> Job $JOB3  (after $JOB2)"
 
 # Stage 4 — Training
