@@ -27,7 +27,14 @@ echo " ***********Loading vtk/9.3.0 at time $(date)************** "
 module load vtk/9.3.0
 echo " ********Modules loaded exporting cuda directory  ********"
 export CUDA_HOME=$(dirname $(dirname $(which nvcc)))
-
+echo " ********torch loading  ********"
+module load torch/2.5.1
+echo " ********torch geometric loading  ********"
+module load torch_geometric/2.7.0
+echo " ********pyvista loading  ********"
+module load pyvista/0.47.1
+echo " ********hydra loading  ********"
+module load hydra_core/1.3.2
 
 echo " **************Setting path for env ***************"
 VENV_PATH="$HOME/envs/xaeronet"
