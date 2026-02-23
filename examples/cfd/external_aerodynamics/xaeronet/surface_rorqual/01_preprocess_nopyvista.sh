@@ -21,13 +21,19 @@ echo " ***********Loading StdEnv/2023 at time $(date)************** "
 module load StdEnv/2023
 echo " ***********Loading python/3.11.5 at time $(date)************** "
 # module load python/3.11.5
-export PYTHONPATH=/home/htruchla/envs/xaeronet/lib/python3.10
+
 echo " ***********Loading cuda/12.6 at time $(date)************** "
 module load cuda/12.6
 echo " ***********Loading vtk/9.3.0 at time $(date)************** "
 module load vtk/9.3.0
 echo " ********Modules loaded exporting cuda directory  ********"
+
+
 export CUDA_HOME=$(dirname $(dirname $(which nvcc)))
+
+module unload scipy-stack
+export PYTHONPATH=/home/htruchla/envs/xaeronet/lib/python3.10/site-packages
+
 
 
 echo " **************Setting path for env ***************"
