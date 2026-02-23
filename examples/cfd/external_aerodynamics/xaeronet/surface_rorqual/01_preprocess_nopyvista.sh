@@ -31,8 +31,7 @@ echo " ********Modules loaded exporting cuda directory  ********"
 
 export CUDA_HOME=$(dirname $(dirname $(which nvcc)))
 
-module unload scipy-stack
-export PYTHONPATH=/home/htruchla/envs/xaeronet/lib/python3.10/site-packages
+export PYTHONPATH=/home/htruchla/envs/xaeronet/lib/python3.10/site-packages:${PYTHONPATH}
 
 
 
