@@ -34,13 +34,13 @@ VENV_PATH="$HOME/envs/xaeronet"
 source "$VENV_PATH/bin/activate"
 
 echo " ********torch loading  ********"
-module load torch/2.5.1
+module --ignore_cache load torch/2.5.1
 echo " ********torch geometric loading  ********"
-module load torch_geometric/2.7.0
+module --ignore_cache load torch_geometric/2.7.0
 echo " ********pyvista loading  ********"
-module load pyvista/0.47.1
+module --ignore_cache load pyvista/0.47.1
 echo " ********hydra loading  ********"
-module load hydra_core/1.3.2
+module --ignore_cache load hydra_core/1.3.2
 
 # ---------- Setup ----------
 cd $SLURM_SUBMIT_DIR
