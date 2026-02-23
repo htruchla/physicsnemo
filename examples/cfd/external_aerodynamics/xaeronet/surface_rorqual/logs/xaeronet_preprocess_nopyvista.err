@@ -1,4 +1,27 @@
+/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch_geometric/__init__.py:4: UserWarning: An issue occurred while importing 'pyg-lib'. Disabling its usage. Stacktrace: /home/htruchla/envs/xaeronet/lib/python3.10/site-packages/libpyg.so: undefined symbol: _ZN5torch8autograd15AutogradContextC1ERNS_6dynamo8autograd10PackedArgsE
+  import torch_geometric.typing
 Traceback (most recent call last):
-  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/preprocessor_rorqual.py", line 41, in <module>
-    from sklearn.neighbors import NearestNeighbors
-ModuleNotFoundError: No module named 'sklearn'
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/preprocessor_rorqual.py", line 37, in <module>
+    import torch_geometric as pyg
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch_geometric/__init__.py", line 22, in <module>
+    import torch_geometric.datasets
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch_geometric/datasets/__init__.py", line 80, in <module>
+    from .web_qsp_dataset import WebQSPDataset, CWQDataset
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch_geometric/datasets/web_qsp_dataset.py", line 11, in <module>
+    from torch_geometric.llm.large_graph_indexer import (
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch_geometric/llm/__init__.py", line 2, in <module>
+    from .rag_loader import RAGQueryLoader
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch_geometric/llm/rag_loader.py", line 5, in <module>
+    from torch_geometric.llm.utils.vectorrag import VectorRetriever
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch_geometric/llm/utils/__init__.py", line 1, in <module>
+    from .backend_utils import *  # noqa
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch_geometric/llm/utils/backend_utils.py", line 40, in <module>
+    from pandas import DataFrame
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2023b/lib/python3.10/site-packages/pandas/__init__.py", line 46, in <module>
+    from pandas.core.api import (
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2023b/lib/python3.10/site-packages/pandas/core/api.py", line 1, in <module>
+    from pandas._libs import (
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/scipy-stack/2023b/lib/python3.10/site-packages/pandas/_libs/__init__.py", line 18, in <module>
+    from pandas._libs.interval import Interval
+  File "interval.pyx", line 1, in init pandas._libs.interval
+ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
