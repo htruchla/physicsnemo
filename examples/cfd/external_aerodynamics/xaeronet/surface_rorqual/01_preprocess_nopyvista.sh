@@ -20,7 +20,8 @@ module --force purge
 echo " ***********Loading StdEnv/2023 at time $(date)************** "
 module load StdEnv/2023
 echo " ***********Loading python/3.11.5 at time $(date)************** "
-module load python/3.11.5
+# module load python/3.11.5
+export PYTHONPATH=/home/htruchla/envs/xaeronet/lib/python3.10
 echo " ***********Loading cuda/12.6 at time $(date)************** "
 module load cuda/12.6
 echo " ***********Loading vtk/9.3.0 at time $(date)************** "
@@ -33,14 +34,7 @@ echo " **************Setting path for env ***************"
 VENV_PATH="$HOME/envs/xaeronet"
 source "$VENV_PATH/bin/activate"
 
-echo " ********torch loading  ********"
-module --ignore_cache load torch/2.5.1
-echo " ********torch geometric loading  ********"
-module --ignore_cache load torch_geometric/2.7.0
-echo " ********pyvista loading  ********"
-module --ignore_cache load pyvista/0.47.1
-echo " ********hydra loading  ********"
-module --ignore_cache load hydra_core/1.3.2
+
 
 # ---------- Setup ----------
 cd $SLURM_SUBMIT_DIR
