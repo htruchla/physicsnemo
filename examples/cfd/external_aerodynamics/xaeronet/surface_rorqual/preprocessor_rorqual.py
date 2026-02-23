@@ -34,7 +34,7 @@ import numpy as np
 import torch
 import hydra
 
-import torch_geometric as pyg
+# import torch_geometric as pyg
 
 from tqdm import tqdm
 from concurrent.futures import ProcessPoolExecutor
@@ -47,7 +47,6 @@ from physicsnemo.sym.geometry.tessellation import Tessellation
 
 from dataloader import PartitionedGraph
 
-print("*****************got into preprocessor_rorqual.py file ***********************")
 
 def convert_to_triangular_mesh(
     polydata, write=False, output_filename="surface_mesh_triangular.vtu"
