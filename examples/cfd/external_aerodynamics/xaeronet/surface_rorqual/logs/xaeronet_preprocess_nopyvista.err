@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/preprocessor_rorqual.py", line 41, in <module>
+    from sklearn.neighbors import NearestNeighbors
+ModuleNotFoundError: No module named 'sklearn'
