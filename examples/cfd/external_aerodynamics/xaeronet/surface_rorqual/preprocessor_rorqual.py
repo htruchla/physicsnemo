@@ -118,7 +118,6 @@ def add_edge_features(graph: pyg.data.Data) -> pyg.data.Data:
 # Define this function outside of any local scope so it can be pickled
 def run_task(params):
     """Wrapper function to unpack arguments for process_run."""
-    print("*******************************inside run_task**********************************")
     return process_run(*params)
 
 
@@ -134,17 +133,15 @@ def process_run(
     run_path, point_list, node_degree, num_partitions, halo_hops, save_point_cloud=False
 ):
     """Process a single run directory to generate a multi-level graph and apply partitioning."""
-    print("*****************************starting process_run***************************************")
+
     run_id = os.path.basename(run_path).split("_")[-1]
-    print("******************************************finished getting run_id*****************************")
 
     stl_file = os.path.join(run_path, f"drivaer_{run_id}_single_solid.stl")
     vtp_file = os.path.join(run_path, f"boundary_{run_id}.vtp")
-    print("****************able to get the stl and vtp files**************************************")
+
 
     # Path to save the list of partitions
     partition_file_path = to_absolute_path(f"partitions/graph_partitions_{run_id}.bin")
-    print("***********************saved parition_file_path***********************")
 
     if os.path.exists(partition_file_path):
         print(f"Partitions for run {run_id} already exist. Skipping...")
@@ -293,20 +290,15 @@ def process_all_runs(
     save_point_cloud=False,
 ):
     """Process all runs in the base directory in parallel."""
-    print("******************running run_dirs****************************************")
     run_dirs = [
         os.path.join(base_path, d)
         for d in os.listdir(base_path)
         if d.startswith("run_") and os.path.isdir(os.path.join(base_path, d))
     ]
-    print("***************************finished run_dirs*******************************")
-    print("******************running tasks****************************************")
     tasks = [
         (run_dir, num_points, node_degree, num_partitions, halo_hops, save_point_cloud)
         for run_dir in run_dirs
     ]
-    print("******************finished tasks****************************************")
-    print("******************starting ProcessPoolExecutor****************************************")
     with ProcessPoolExecutor(max_workers=num_workers) as pool:
         for _ in tqdm(
             pool.map(run_task, tasks),
@@ -315,13 +307,11 @@ def process_all_runs(
             unit="run",
         ):
             pass
-    print("******************finished ProcessPoolExecutor****************************************")
     
 
 
 @hydra.main(version_base="1.3", config_path="conf", config_name="config")
 def main(cfg: DictConfig) -> None:
-    print("******************running process_all_runs****************************************")
     process_all_runs(
         base_path=to_absolute_path(cfg.data_path),
         num_points=cfg.num_nodes,
@@ -331,9 +321,7 @@ def main(cfg: DictConfig) -> None:
         num_workers=cfg.num_preprocess_workers,
         save_point_cloud=cfg.save_point_clouds,
     )
-    print("******************finished process_all_runs****************************************")
 
 
 if __name__ == "__main__":
-    print("******************running main****************************************")
     main()
