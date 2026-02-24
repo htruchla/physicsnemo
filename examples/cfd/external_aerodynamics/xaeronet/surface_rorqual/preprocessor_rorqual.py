@@ -141,7 +141,8 @@ def process_run(
 
 
     # Path to save the list of partitions
-    partition_file_path = to_absolute_path(f"partitions/graph_partitions_{run_id}.bin")
+    partition_file_path = f"/scratch/htruchla/XAERONET/partitions/graph_partitions_{run_id}.bin"
+    
 
     if os.path.exists(partition_file_path):
         print(f"Partitions for run {run_id} already exist. Skipping...")

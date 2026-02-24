@@ -43,7 +43,7 @@ source "$VENV_PATH/bin/activate"
 
 # ---------- Setup ----------
 cd $SLURM_SUBMIT_DIR
-mkdir -p logs partitions point_clouds
+mkdir -p logs point_clouds /scratch/htruchla/XAERONET
 
 # ---------- Run ----------
 echo "=== [$(date)] Preprocessing started on $(hostname) ==="
