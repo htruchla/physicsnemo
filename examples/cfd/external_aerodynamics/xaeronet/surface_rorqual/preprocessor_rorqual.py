@@ -47,6 +47,9 @@ from physicsnemo.sym.geometry.tessellation import Tessellation
 
 from dataloader import PartitionedGraph
 
+#NEED TO FIX THIS LINE WHEN CHANGING WHERE PARTITIONS IS SAVE partition_file_path -> AROUND LINE 147
+
+
 
 def convert_to_triangular_mesh(
     polydata, write=False, output_filename="surface_mesh_triangular.vtu"
@@ -141,7 +144,7 @@ def process_run(
 
 
     # Path to save the list of partitions
-    partition_file_path = f"/scratch/htruchla/XAERONET/partitions/graph_partitions_{run_id}.bin"
+    partition_file_path = f"/home/htruchla/links/scratch/XAERONET/partitions_training/graph_partitions_{run_id}.bin"
     
 
     if os.path.exists(partition_file_path):
