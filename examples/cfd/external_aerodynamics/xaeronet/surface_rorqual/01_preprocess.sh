@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=xaeronet_preprocess_nopyvista
-#SBATCH --output=logs/xaeronet_preprocess_nopyvista.out
-#SBATCH --error=logs/xaeronet_preprocess_nopyvista.err
+#SBATCH --job-name=01_xaeronet_preprocess
+#SBATCH --output=logs/01_xaeronet_preprocess.out
+#SBATCH --error=logs/01_xaeronet_preprocess.err
 #SBATCH --time=12:00:00
 #SBATCH --mem=128G
 #SBATCH --cpus-per-task=32        # Should match cfg.num_preprocess_workers in conf/config.yaml
