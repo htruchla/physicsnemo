@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=xaeronet_computestats
-#SBATCH --output=logs/xaeronet_computestats.out
-#SBATCH --error=logs/xaeronet_computestats.err
+#SBATCH --job-name=03_xaeronet_compute_stats
+#SBATCH --output=logs/03_xaeronet_compute_stats.out
+#SBATCH --error=logs/03_xaeronet_compute_stats.err
 #SBATCH --time=02:00:00
 #SBATCH --mem=64G
 #SBATCH --cpus-per-task=16        # Should match cfg.num_preprocess_workers in conf/config.yaml
@@ -15,15 +15,16 @@
 
 # ---------- Environment ----------
 module --force purge
-module load StdEnv/2023          
-module load python/3.11.5
+module load StdEnv/2023
 module load cuda/12.6
 module load vtk/9.3.0
 
 export CUDA_HOME=$(dirname $(dirname $(which nvcc)))
+export PYTHONPATH=/home/htruchla/envs/xaeronet/lib/python3.10/site-packages:${PYTHONPATH}
+
+
 VENV_PATH="$HOME/envs/xaeronet"
 source "$VENV_PATH/bin/activate"
-pip install --upgrade --force-reinstall pyvista
 
 # ---------- Setup ----------
 cd $SLURM_SUBMIT_DIR

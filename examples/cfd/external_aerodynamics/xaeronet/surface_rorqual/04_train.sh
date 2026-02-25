@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=xaeronet_train
-#SBATCH --output=logs/xaeronet_train.out
-#SBATCH --error=logs/xaeronet_train.err
+#SBATCH --job-name=04_xaeronet_train
+#SBATCH --output=logs/04_xaeronet_train.out
+#SBATCH --error=logs/04_xaeronet_train.err
 #SBATCH --time=48:00:00
 #SBATCH --mem=256G
 #SBATCH --cpus-per-task=8         # CPU threads per GPU worker for data loading
@@ -16,15 +16,15 @@
 #SBATCH --gres=gpu:4              # GPUs per node — adjust to match ntasks-per-node
 # ---------- Environment ----------
 module --force purge
-module load StdEnv/2023          
-module load python/3.11.5
+module load StdEnv/2023
 module load cuda/12.6
 module load vtk/9.3.0
 
 export CUDA_HOME=$(dirname $(dirname $(which nvcc)))
+export PYTHONPATH=/home/htruchla/envs/xaeronet/lib/python3.10/site-packages:${PYTHONPATH}
+
 VENV_PATH="$HOME/envs/xaeronet"
 source "$VENV_PATH/bin/activate"
-pip install --upgrade --force-reinstall pyvista
 
 # ---------- Setup ----------
 cd $SLURM_SUBMIT_DIR
