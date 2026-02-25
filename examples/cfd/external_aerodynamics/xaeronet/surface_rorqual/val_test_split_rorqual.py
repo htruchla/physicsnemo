@@ -57,7 +57,7 @@ def main(cfg: DictConfig) -> None:
     
     num_val = max(1, round(total * VAL_FRACTION))
     num_test = max(1, round(total * TEST_FRACTION))
-    num_train = num_val - num_test
+    num_train = total - num_val - num_test
 
     if num_train <=0:
         raise RuntimeError(
@@ -80,8 +80,8 @@ def main(cfg: DictConfig) -> None:
     train_files = shuffled[num_val + num_test:]
 
     #move the files
-    moved_test = move_file(test_files, test_dir)
-    moved_val = move_file(val_files, val_dir)
+    moved_test = move_files(test_files, test_dir)
+    moved_val = move_files(val_files, val_dir)
 
     #save the manifest 
     save_manifest(
@@ -98,7 +98,7 @@ def main(cfg: DictConfig) -> None:
 
     save_manifest(
         moved_test,
-        os.path.join(val_dir, "test_manifest.json"),
+        os.path.join(test_dir, "test_manifest.json"),
         "test",
     )
 
