@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --job-name=xaeronet_val_test_split
-#SBATCH --output=logs/xaeronet_val_test_split.out
-#SBATCH --error=logs/xaeronet_val_test_split.err
-#SBATCH --time=4:00:00
+#SBATCH --job-name=02_xaeronet_val_test_split
+#SBATCH --output=logs/02_xaeronet_val_test_split.out
+#SBATCH --error=logs/02_xaeronet_val_test_split.err
+#SBATCH --time=0:30:00
 #SBATCH --mem=8G
 #SBATCH --cpus-per-task=8        # Should match cfg.num_preprocess_workers in conf/config.yaml
 
