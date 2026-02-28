@@ -1,0 +1,50 @@
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 42, in <module>
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 42, in <module>
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 42, in <module>
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 42, in <module>
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 42, in <module>
+    from torch.utils.tensorboard import SummaryWriter
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/utils/tensorboard/__init__.py", line 7, in <module>
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 42, in <module>
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 42, in <module>
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 42, in <module>
+    from torch.utils.tensorboard import SummaryWriter
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/utils/tensorboard/__init__.py", line 7, in <module>
+    from torch.utils.tensorboard import SummaryWriter
+    from torch.utils.tensorboard import SummaryWriter
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/utils/tensorboard/__init__.py", line 7, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/utils/tensorboard/__init__.py", line 7, in <module>
+    from torch.utils.tensorboard import SummaryWriter
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/utils/tensorboard/__init__.py", line 7, in <module>
+    from torch.utils.tensorboard import SummaryWriter
+    from torch.utils.tensorboard import SummaryWriter
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/utils/tensorboard/__init__.py", line 7, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/utils/tensorboard/__init__.py", line 7, in <module>
+    from torch.utils.tensorboard import SummaryWriter
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/utils/tensorboard/__init__.py", line 7, in <module>
+    raise ImportError("TensorBoard logging requires TensorBoard version 1.15 or above")
+ImportError: TensorBoard logging requires TensorBoard version 1.15 or above
+    raise ImportError("TensorBoard logging requires TensorBoard version 1.15 or above")
+ImportError: TensorBoard logging requires TensorBoard version 1.15 or above
+    raise ImportError("TensorBoard logging requires TensorBoard version 1.15 or above")
+ImportError: TensorBoard logging requires TensorBoard version 1.15 or above
+    raise ImportError("TensorBoard logging requires TensorBoard version 1.15 or above")
+ImportError: TensorBoard logging requires TensorBoard version 1.15 or above
+    raise ImportError("TensorBoard logging requires TensorBoard version 1.15 or above")
+ImportError: TensorBoard logging requires TensorBoard version 1.15 or above
+    raise ImportError("TensorBoard logging requires TensorBoard version 1.15 or above")
+    raise ImportError("TensorBoard logging requires TensorBoard version 1.15 or above")
+ImportError: TensorBoard logging requires TensorBoard version 1.15 or above
+ImportError: TensorBoard logging requires TensorBoard version 1.15 or above
+    raise ImportError("TensorBoard logging requires TensorBoard version 1.15 or above")
+ImportError: TensorBoard logging requires TensorBoard version 1.15 or above
+srun: error: rg31601: tasks 0-3: Exited with exit code 1
+srun: error: rg31607: tasks 4-7: Exited with exit code 1

@@ -1,42 +1,1 @@
-Processing BIN Files:   0%|          | 0/395 [00:00<?, ?file/s]Processing BIN Files:   0%|          | 1/395 [01:19<8:39:59, 79.19s/file]Processing BIN Files:   1%|          | 2/395 [01:21<3:43:32, 34.13s/file]Processing BIN Files:   1%|          | 3/395 [04:53<12:31:18, 115.00s/file]Processing BIN Files:   2%|▏         | 7/395 [06:30<5:19:39, 49.43s/file]  Processing BIN Files:   3%|▎         | 11/395 [54:38<31:47:34, 298.06s/file]
-Error executing job with overrides: []
-concurrent.futures.process._RemoteTraceback: 
-"""
-Traceback (most recent call last):
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/concurrent/futures/process.py", line 246, in _process_worker
-    r = call_item.fn(*call_item.args, **call_item.kwargs)
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/concurrent/futures/process.py", line 205, in _process_chunk
-    return [fn(*args) for args in chunk]
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/concurrent/futures/process.py", line 205, in <listcomp>
-    return [fn(*args) for args in chunk]
-  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/compute_stats_rorqual.py", line 52, in process_file
-    graphs = torch.load(bin_file, weights_only=False)
-  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/serialization.py", line 1326, in load
-    with _open_zipfile_reader(opened_file) as opened_zipfile:
-  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/serialization.py", line 671, in __init__
-    super().__init__(torch._C.PyTorchFileReader(name_or_buffer))
-RuntimeError: PytorchStreamReader failed reading zip archive: failed finding central directory
-"""
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/compute_stats_rorqual.py", line 197, in main
-    global_mean, global_std = compute_global_stats(
-  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/compute_stats_rorqual.py", line 154, in compute_global_stats
-    results = list(
-  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/tqdm/std.py", line 1181, in __iter__
-    for obj in iterable:
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/concurrent/futures/process.py", line 575, in _chain_from_iterable_of_lists
-    for element in iterable:
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/concurrent/futures/_base.py", line 621, in result_iterator
-    yield _result_or_cancel(fs.pop())
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/concurrent/futures/_base.py", line 319, in _result_or_cancel
-    return fut.result(timeout)
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/concurrent/futures/_base.py", line 458, in result
-    return self.__get_result()
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
-    raise self._exception
-RuntimeError: PytorchStreamReader failed reading zip archive: failed finding central directory
-
-Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Processing BIN Files:   0%|          | 0/338 [00:00<?, ?file/s]Processing BIN Files:   0%|          | 1/338 [00:50<4:44:09, 50.59s/file]Processing BIN Files:   1%|          | 2/338 [00:52<2:02:03, 21.80s/file]Processing BIN Files:   1%|          | 4/338 [02:34<3:43:42, 40.19s/file]Processing BIN Files:   4%|▍         | 13/338 [02:35<43:45,  8.08s/file] Processing BIN Files:   5%|▌         | 18/338 [02:58<35:54,  6.73s/file]Processing BIN Files:  16%|█▌        | 53/338 [02:59<06:37,  1.39s/file]Processing BIN Files:  16%|█▌        | 53/338 [03:09<06:37,  1.39s/file]Processing BIN Files:  21%|██        | 71/338 [04:00<09:31,  2.14s/file]Processing BIN Files:  22%|██▏       | 76/338 [04:09<09:06,  2.09s/file]Processing BIN Files:  25%|██▍       | 84/338 [04:13<07:19,  1.73s/file]Processing BIN Files:  25%|██▍       | 84/338 [04:30<07:19,  1.73s/file]Processing BIN Files:  28%|██▊       | 95/338 [05:13<11:40,  2.88s/file]Processing BIN Files:  29%|██▉       | 98/338 [05:19<11:05,  2.77s/file]Processing BIN Files:  37%|███▋      | 124/338 [05:44<06:13,  1.75s/file]Processing BIN Files:  46%|████▌     | 155/338 [06:26<04:44,  1.56s/file]Processing BIN Files:  48%|████▊     | 161/338 [07:29<07:43,  2.62s/file]Processing BIN Files:  54%|█████▎    | 181/338 [07:37<04:45,  1.82s/file]Processing BIN Files:  57%|█████▋    | 191/338 [07:43<03:50,  1.57s/file]Processing BIN Files:  58%|█████▊    | 197/338 [08:08<04:37,  1.97s/file]Processing BIN Files:  65%|██████▍   | 219/338 [08:39<03:23,  1.71s/file]Processing BIN Files:  72%|███████▏  | 243/338 [09:11<02:28,  1.56s/file]Processing BIN Files:  73%|███████▎  | 246/338 [09:15<02:21,  1.54s/file]Processing BIN Files:  93%|█████████▎| 315/338 [09:49<00:18,  1.23file/s]Processing BIN Files: 100%|██████████| 338/338 [09:49<00:00,  1.74s/file]
