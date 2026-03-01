@@ -1,3 +1,3 @@
-=== [Sat 28 Feb 2026 09:55:23 PM EST] Training started ===
-=== Nodes: rg[32301,32303] | Total GPUs (world size): 8 ===
-=== [Sat 28 Feb 2026 09:55:44 PM EST] Training finished with exit code 1 ===
+=== [Sun 01 Mar 2026 12:08:05 AM EST] Training started ===
+=== Nodes: rg[31601,32402] | Total GPUs (world size): 8 ===
+=== [Sun 01 Mar 2026 12:08:22 AM EST] Training finished with exit code 1 ===
