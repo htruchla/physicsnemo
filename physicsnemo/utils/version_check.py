@@ -57,7 +57,7 @@ def check_min_version(
         package = importlib.import_module(package_name)
         package_version = getattr(package, "__version__", "0.0.0")
     except ImportError:
-        raise ImportError(f"Package {package_name} is required but not installed.")
+        raise False #changed from ImportError(f"Package {package_name} is required but not installed.")
 
     if version.parse(package_version) < version.parse(min_version):
         msg = (
