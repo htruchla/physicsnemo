@@ -1,0 +1,10 @@
+I had to change the /lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py script line:
+except ImportError:
+        raise ImportError(f"Package {package_name} is required but not installed.")
+
+to:
+except ImportError:
+        return False
+
+to allow code to run and not crash when cuml isn't found. cuML provides GPU accelearted implmentation that would otherwise run on CPU with sci-kit learn.
+It is notoriously difficult to install typically only available using conda and not pip. Not available on most HPC clusters.

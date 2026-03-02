@@ -1,83 +1,21 @@
 Traceback (most recent call last):
 Traceback (most recent call last):
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 57, in check_min_version
-Traceback (most recent call last):
-Traceback (most recent call last):
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 57, in check_min_version
-Traceback (most recent call last):
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 57, in check_min_version
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 57, in check_min_version
-Traceback (most recent call last):
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 57, in check_min_version
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 57, in check_min_version
-Traceback (most recent call last):
-Traceback (most recent call last):
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 57, in check_min_version
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 57, in check_min_version
-    package = importlib.import_module(package_name)
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    package = importlib.import_module(package_name)
-    package = importlib.import_module(package_name)
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/importlib/__init__.py", line 126, in import_module
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    package = importlib.import_module(package_name)
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    package = importlib.import_module(package_name)
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/importlib/__init__.py", line 126, in import_module
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-    return _bootstrap._gcd_import(name[level:], package, level)
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-    package = importlib.import_module(package_name)
-    package = importlib.import_module(package_name)
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/importlib/__init__.py", line 126, in import_module
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-    package = importlib.import_module(package_name)
-  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcccore/python/3.10.13/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-    return _bootstrap._gcd_import(name[level:], package, level)
-    return _bootstrap._gcd_import(name[level:], package, level)
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
-ModuleNotFoundError: No module named 'cuml'
-
-During handling of the above exception, another exception occurred:
-
-ModuleNotFoundError: No module named 'cuml'
-ModuleNotFoundError: No module named 'cuml'
-ModuleNotFoundError: No module named 'cuml'
-
-During handling of the above exception, another exception occurred:
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 47, in <module>
 Traceback (most recent call last):
   File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 47, in <module>
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
 Traceback (most recent call last):
   File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 47, in <module>
+Traceback (most recent call last):
   File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 47, in <module>
+Traceback (most recent call last):
   File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 47, in <module>
+    from physicsnemo.models.meshgraphnet import MeshGraphNet
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 47, in <module>
+    from physicsnemo.models.meshgraphnet import MeshGraphNet
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 47, in <module>
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/__init__.py", line 17, in <module>
+    from physicsnemo.models.meshgraphnet import MeshGraphNet
     from physicsnemo.models.meshgraphnet import MeshGraphNet
     from physicsnemo.models.meshgraphnet import MeshGraphNet
     from physicsnemo.models.meshgraphnet import MeshGraphNet
@@ -85,44 +23,6 @@ Traceback (most recent call last):
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/__init__.py", line 17, in <module>
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/__init__.py", line 17, in <module>
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/__init__.py", line 17, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/__init__.py", line 17, in <module>
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
-ModuleNotFoundError: No module named 'cuml'
-ModuleNotFoundError: No module named 'cuml'
-ModuleNotFoundError: No module named 'cuml'
-
-During handling of the above exception, another exception occurred:
-
-ModuleNotFoundError: No module named 'cuml'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-
-During handling of the above exception, another exception occurred:
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-Traceback (most recent call last):
-  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 47, in <module>
-Traceback (most recent call last):
-  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 47, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 47, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 47, in <module>
-    from physicsnemo.models.meshgraphnet import MeshGraphNet
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/__init__.py", line 17, in <module>
-    from physicsnemo.models.meshgraphnet import MeshGraphNet
-    from physicsnemo.models.meshgraphnet import MeshGraphNet
-    from physicsnemo.models.meshgraphnet import MeshGraphNet
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/__init__.py", line 17, in <module>
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/__init__.py", line 17, in <module>
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/__init__.py", line 17, in <module>
@@ -133,10 +33,8 @@ Traceback (most recent call last):
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/meshgraphnet.py", line 57, in <module>
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/meshgraphnet.py", line 57, in <module>
     from .meshgraphnet import MeshGraphNet  # noqa: I001
-    from .meshgraphnet import MeshGraphNet  # noqa: I001
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/meshgraphnet.py", line 57, in <module>
     from .meshgraphnet import MeshGraphNet  # noqa: I001
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/meshgraphnet.py", line 57, in <module>
     from .meshgraphnet import MeshGraphNet  # noqa: I001
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/meshgraphnet.py", line 57, in <module>
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/meshgraphnet.py", line 57, in <module>
@@ -150,12 +48,10 @@ Traceback (most recent call last):
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/gnn_layers/mesh_edge_block.py", line 23, in <module>
     from physicsnemo.models.gnn_layers.mesh_edge_block import MeshEdgeBlock
     from physicsnemo.models.gnn_layers.mesh_edge_block import MeshEdgeBlock
-    from physicsnemo.models.gnn_layers.mesh_edge_block import MeshEdgeBlock
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/gnn_layers/mesh_edge_block.py", line 23, in <module>
     from physicsnemo.models.gnn_layers.mesh_edge_block import MeshEdgeBlock
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/gnn_layers/mesh_edge_block.py", line 23, in <module>
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/gnn_layers/mesh_edge_block.py", line 23, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/gnn_layers/mesh_edge_block.py", line 23, in <module>
     from physicsnemo.models.gnn_layers.mesh_edge_block import MeshEdgeBlock
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/gnn_layers/mesh_edge_block.py", line 23, in <module>
     from .mesh_graph_mlp import (
@@ -165,8 +61,6 @@ Traceback (most recent call last):
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/gnn_layers/mesh_graph_mlp.py", line 25, in <module>
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/gnn_layers/mesh_graph_mlp.py", line 25, in <module>
     from .mesh_graph_mlp import (
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/gnn_layers/mesh_graph_mlp.py", line 25, in <module>
-    from .mesh_graph_mlp import (
     from .mesh_graph_mlp import (
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/gnn_layers/mesh_graph_mlp.py", line 25, in <module>
     from .mesh_graph_mlp import (
@@ -175,134 +69,192 @@ Traceback (most recent call last):
     from .mesh_graph_mlp import (
   File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/gnn_layers/mesh_graph_mlp.py", line 25, in <module>
     from physicsnemo.models.layers.layer_norm import get_layer_norm_class
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 25, in <module>
-    from physicsnemo.models.layers.layer_norm import get_layer_norm_class
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 25, in <module>
-    from physicsnemo.models.layers.layer_norm import get_layer_norm_class
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 25, in <module>
     from physicsnemo.models.layers.layer_norm import get_layer_norm_class
     from physicsnemo.models.layers.layer_norm import get_layer_norm_class
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 58, in <module>
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 58, in <module>
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 58, in <module>
     from physicsnemo.models.layers.layer_norm import get_layer_norm_class
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 25, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 25, in <module>
     from physicsnemo.models.layers.layer_norm import get_layer_norm_class
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 25, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 25, in <module>
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 58, in <module>
     from physicsnemo.models.layers.layer_norm import get_layer_norm_class
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 25, in <module>
-    from .ball_query import BQWarp
-    from .ball_query import BQWarp
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/ball_query.py", line 29, in <module>
-    from .ball_query import BQWarp
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/ball_query.py", line 29, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/ball_query.py", line 29, in <module>
-    from .ball_query import BQWarp
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/ball_query.py", line 29, in <module>
-    from .ball_query import BQWarp
-    from .ball_query import BQWarp
-    from .ball_query import BQWarp
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/ball_query.py", line 29, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/ball_query.py", line 29, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/ball_query.py", line 29, in <module>
-    from .ball_query import BQWarp
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/ball_query.py", line 29, in <module>
-    from physicsnemo.utils.neighbors import radius_search
-    from physicsnemo.utils.neighbors import radius_search
-    from physicsnemo.utils.neighbors import radius_search
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/__init__.py", line 18, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/__init__.py", line 18, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/__init__.py", line 18, in <module>
-    from physicsnemo.utils.neighbors import radius_search
-    from physicsnemo.utils.neighbors import radius_search
-    from physicsnemo.utils.neighbors import radius_search
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/__init__.py", line 18, in <module>
-    from physicsnemo.utils.neighbors import radius_search
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/__init__.py", line 18, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/__init__.py", line 18, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/__init__.py", line 18, in <module>
-    from physicsnemo.utils.neighbors import radius_search
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/__init__.py", line 18, in <module>
-    from .knn import knn
-    from .knn import knn
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/__init__.py", line 18, in <module>
-    from .knn import knn
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/__init__.py", line 18, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/__init__.py", line 18, in <module>
-    from .knn import knn
-    from .knn import knn
-    from .knn import knn
-    from .knn import knn
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/__init__.py", line 18, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/__init__.py", line 18, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/__init__.py", line 18, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/__init__.py", line 18, in <module>
-    from .knn import knn
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/__init__.py", line 18, in <module>
-    from .knn import knn
-    from .knn import knn
-    from .knn import knn
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/knn.py", line 21, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/knn.py", line 21, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/knn.py", line 21, in <module>
-    from .knn import knn
-    from .knn import knn
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/knn.py", line 21, in <module>
-    from .knn import knn
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/knn.py", line 21, in <module>
-    from .knn import knn
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/knn.py", line 21, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/knn.py", line 21, in <module>
-    from .knn import knn
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/knn.py", line 21, in <module>
-    from ._cuml_impl import knn_impl as knn_cuml
-    from ._cuml_impl import knn_impl as knn_cuml
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/_cuml_impl.py", line 21, in <module>
-    from ._cuml_impl import knn_impl as knn_cuml
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/_cuml_impl.py", line 21, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/_cuml_impl.py", line 21, in <module>
-    from ._cuml_impl import knn_impl as knn_cuml
-    from ._cuml_impl import knn_impl as knn_cuml
-    from ._cuml_impl import knn_impl as knn_cuml
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/_cuml_impl.py", line 21, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/_cuml_impl.py", line 21, in <module>
-    from ._cuml_impl import knn_impl as knn_cuml
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/_cuml_impl.py", line 21, in <module>
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/_cuml_impl.py", line 21, in <module>
-    from ._cuml_impl import knn_impl as knn_cuml
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/neighbors/knn/_cuml_impl.py", line 21, in <module>
-    CUML_AVAILABLE = check_min_version("cuml", "24.0.0")
-    CUML_AVAILABLE = check_min_version("cuml", "24.0.0")
-    CUML_AVAILABLE = check_min_version("cuml", "24.0.0")
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 60, in check_min_version
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 60, in check_min_version
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 60, in check_min_version
-    CUML_AVAILABLE = check_min_version("cuml", "24.0.0")
-    CUML_AVAILABLE = check_min_version("cuml", "24.0.0")
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 60, in check_min_version
-    CUML_AVAILABLE = check_min_version("cuml", "24.0.0")
-    raise False #changed from ImportError(f"Package {package_name} is required but not installed.")
-    raise False #changed from ImportError(f"Package {package_name} is required but not installed.")
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 60, in check_min_version
-    raise False #changed from ImportError(f"Package {package_name} is required but not installed.")
-TypeError: exceptions must derive from BaseException
-TypeError: exceptions must derive from BaseException
-TypeError: exceptions must derive from BaseException
-    raise False #changed from ImportError(f"Package {package_name} is required but not installed.")
-TypeError: exceptions must derive from BaseException
-    CUML_AVAILABLE = check_min_version("cuml", "24.0.0")
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 60, in check_min_version
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 60, in check_min_version
-    CUML_AVAILABLE = check_min_version("cuml", "24.0.0")
-    raise False #changed from ImportError(f"Package {package_name} is required but not installed.")
-    raise False #changed from ImportError(f"Package {package_name} is required but not installed.")
-    raise False #changed from ImportError(f"Package {package_name} is required but not installed.")
-  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/utils/version_check.py", line 60, in check_min_version
-TypeError: exceptions must derive from BaseException
-TypeError: exceptions must derive from BaseException
-TypeError: exceptions must derive from BaseException
-    raise False #changed from ImportError(f"Package {package_name} is required but not installed.")
-TypeError: exceptions must derive from BaseException
-srun: error: rg31601: tasks 0-1,3: Exited with exit code 1
-srun: error: rg32402: tasks 4-6: Exited with exit code 1
-srun: error: rg31601: task 2: Exited with exit code 1
-srun: error: rg32402: task 7: Exited with exit code 1
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 58, in <module>
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 58, in <module>
+    from physicsnemo.models.layers.layer_norm import get_layer_norm_class
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 58, in <module>
+    from .transformer_layers import (
+    from .transformer_layers import (
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/transformer_layers.py", line 20, in <module>
+    from .transformer_layers import (
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/transformer_layers.py", line 20, in <module>
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/transformer_layers.py", line 20, in <module>
+    from .transformer_layers import (
+    from .transformer_layers import (
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/transformer_layers.py", line 20, in <module>
+    from .transformer_layers import (
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/transformer_layers.py", line 20, in <module>
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/transformer_layers.py", line 20, in <module>
+    from .transformer_layers import (
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/transformer_layers.py", line 20, in <module>
+    from timm.layers import to_2tuple
+    from timm.layers import to_2tuple
+    from timm.layers import to_2tuple
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/__init__.py", line 2, in <module>
+    from timm.layers import to_2tuple
+    from timm.layers import to_2tuple
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/__init__.py", line 2, in <module>
+    from timm.layers import to_2tuple
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/__init__.py", line 2, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/__init__.py", line 2, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/__init__.py", line 2, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/__init__.py", line 2, in <module>
+    from timm.layers import to_2tuple
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/__init__.py", line 2, in <module>
+    from .layers import (
+    from .layers import (
+    from .layers import (
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/__init__.py", line 1, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/__init__.py", line 1, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/__init__.py", line 1, in <module>
+    from .layers import (
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/__init__.py", line 1, in <module>
+    from .layers import (
+    from .layers import (
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/__init__.py", line 1, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/__init__.py", line 1, in <module>
+    from .layers import (
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/__init__.py", line 1, in <module>
+    from ._fx import (
+    from ._fx import (
+    from ._fx import (
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/_fx.py", line 8, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/_fx.py", line 8, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/_fx.py", line 8, in <module>
+    from ._fx import (
+    from ._fx import (
+    from ._fx import (
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/_fx.py", line 8, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/_fx.py", line 8, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/_fx.py", line 8, in <module>
+    from ._fx import (
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/_fx.py", line 8, in <module>
+    from torchvision.models.feature_extraction import create_feature_extractor as _create_feature_extractor
+    from torchvision.models.feature_extraction import create_feature_extractor as _create_feature_extractor
+    from torchvision.models.feature_extraction import create_feature_extractor as _create_feature_extractor
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/__init__.py", line 10, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/__init__.py", line 10, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/__init__.py", line 10, in <module>
+    from torchvision.models.feature_extraction import create_feature_extractor as _create_feature_extractor
+    from torchvision.models.feature_extraction import create_feature_extractor as _create_feature_extractor
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/__init__.py", line 10, in <module>
+    from torchvision.models.feature_extraction import create_feature_extractor as _create_feature_extractor
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/__init__.py", line 10, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/__init__.py", line 10, in <module>
+    from torchvision.models.feature_extraction import create_feature_extractor as _create_feature_extractor
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/__init__.py", line 10, in <module>
+    from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils  # usort:skip
+    from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils  # usort:skip
+    from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils  # usort:skip
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/_meta_registrations.py", line 164, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/_meta_registrations.py", line 164, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/_meta_registrations.py", line 164, in <module>
+    from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils  # usort:skip
+    from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils  # usort:skip
+    from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils  # usort:skip
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/_meta_registrations.py", line 164, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/_meta_registrations.py", line 164, in <module>
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/_meta_registrations.py", line 164, in <module>
+    from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils  # usort:skip
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/_meta_registrations.py", line 164, in <module>
+    def meta_nms(dets, scores, iou_threshold):
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 795, in register
+    def meta_nms(dets, scores, iou_threshold):
+    def meta_nms(dets, scores, iou_threshold):
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 795, in register
+    def meta_nms(dets, scores, iou_threshold):
+    def meta_nms(dets, scores, iou_threshold):
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 795, in register
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 795, in register
+    def meta_nms(dets, scores, iou_threshold):
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 795, in register
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 795, in register
+    def meta_nms(dets, scores, iou_threshold):
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 795, in register
+    use_lib._register_fake(op_name, func, _stacklevel=stacklevel + 1)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 184, in _register_fake
+    use_lib._register_fake(op_name, func, _stacklevel=stacklevel + 1)
+    use_lib._register_fake(op_name, func, _stacklevel=stacklevel + 1)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 184, in _register_fake
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 184, in _register_fake
+    use_lib._register_fake(op_name, func, _stacklevel=stacklevel + 1)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 184, in _register_fake
+    use_lib._register_fake(op_name, func, _stacklevel=stacklevel + 1)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 184, in _register_fake
+    handle = entry.fake_impl.register(func_to_register, source)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_library/fake_impl.py", line 31, in register
+    use_lib._register_fake(op_name, func, _stacklevel=stacklevel + 1)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 184, in _register_fake
+    handle = entry.fake_impl.register(func_to_register, source)
+    handle = entry.fake_impl.register(func_to_register, source)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_library/fake_impl.py", line 31, in register
+    use_lib._register_fake(op_name, func, _stacklevel=stacklevel + 1)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_library/fake_impl.py", line 31, in register
+    handle = entry.fake_impl.register(func_to_register, source)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_library/fake_impl.py", line 31, in register
+    handle = entry.fake_impl.register(func_to_register, source)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 184, in _register_fake
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_library/fake_impl.py", line 31, in register
+    handle = entry.fake_impl.register(func_to_register, source)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_library/fake_impl.py", line 31, in register
+    handle = entry.fake_impl.register(func_to_register, source)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_library/fake_impl.py", line 31, in register
+    if torch._C._dispatch_has_kernel_for_dispatch_key(self.qualname, "Meta"):
+    if torch._C._dispatch_has_kernel_for_dispatch_key(self.qualname, "Meta"):
+RuntimeError: operator torchvision::nms does not exist
+RuntimeError: operator torchvision::nms does not exist
+    if torch._C._dispatch_has_kernel_for_dispatch_key(self.qualname, "Meta"):
+    if torch._C._dispatch_has_kernel_for_dispatch_key(self.qualname, "Meta"):
+RuntimeError: operator torchvision::nms does not exist
+RuntimeError: operator torchvision::nms does not exist
+    if torch._C._dispatch_has_kernel_for_dispatch_key(self.qualname, "Meta"):
+    if torch._C._dispatch_has_kernel_for_dispatch_key(self.qualname, "Meta"):
+    if torch._C._dispatch_has_kernel_for_dispatch_key(self.qualname, "Meta"):
+RuntimeError: operator torchvision::nms does not exist
+RuntimeError: operator torchvision::nms does not exist
+RuntimeError: operator torchvision::nms does not exist
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 47, in <module>
+    from physicsnemo.models.meshgraphnet import MeshGraphNet
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/__init__.py", line 17, in <module>
+    from .meshgraphnet import MeshGraphNet  # noqa: I001
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/meshgraphnet/meshgraphnet.py", line 57, in <module>
+    from physicsnemo.models.gnn_layers.mesh_edge_block import MeshEdgeBlock
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/gnn_layers/mesh_edge_block.py", line 23, in <module>
+    from .mesh_graph_mlp import (
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/gnn_layers/mesh_graph_mlp.py", line 25, in <module>
+    from physicsnemo.models.layers.layer_norm import get_layer_norm_class
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/__init__.py", line 58, in <module>
+    from .transformer_layers import (
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/models/layers/transformer_layers.py", line 20, in <module>
+    from timm.layers import to_2tuple
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/__init__.py", line 2, in <module>
+    from .layers import (
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/__init__.py", line 1, in <module>
+    from ._fx import (
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/timm/layers/_fx.py", line 8, in <module>
+    from torchvision.models.feature_extraction import create_feature_extractor as _create_feature_extractor
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/__init__.py", line 10, in <module>
+    from torchvision import _meta_registrations, datasets, io, models, ops, transforms, utils  # usort:skip
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torchvision/_meta_registrations.py", line 164, in <module>
+    def meta_nms(dets, scores, iou_threshold):
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 795, in register
+    use_lib._register_fake(op_name, func, _stacklevel=stacklevel + 1)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/library.py", line 184, in _register_fake
+    handle = entry.fake_impl.register(func_to_register, source)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_library/fake_impl.py", line 31, in register
+    if torch._C._dispatch_has_kernel_for_dispatch_key(self.qualname, "Meta"):
+RuntimeError: operator torchvision::nms does not exist
+srun: error: rg32202: tasks 4-5,7: Exited with exit code 1
+srun: error: rg31607: tasks 0-1,3: Exited with exit code 1
+srun: error: rg31607: task 2: Exited with exit code 1
+srun: error: rg32202: task 6: Exited with exit code 1
