@@ -14,6 +14,7 @@
 #SBATCH --ntasks-per-node=4       # One task per GPU; must equal --gres=gpu:N below
 
 #SBATCH --gres=gpu:4              # GPUs per node — adjust to match ntasks-per-node
+#SBATCH --exclude=rg32601         #excluding suspected faulty node
 # ---------- Environment ----------
 module --force purge
 module load StdEnv/2023
