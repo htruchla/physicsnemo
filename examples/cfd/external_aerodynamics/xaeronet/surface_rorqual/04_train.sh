@@ -52,7 +52,7 @@ export NCCL_DEBUG=INFO   # temporarily — shows NCCL init details in the .err l
 
 echo "=== MASTER_ADDR: $MASTER_ADDR ==="
 
-srun python train_rorqual.py
+srun python -u train_rorqual.py
 
 EXIT_CODE=$?
 echo "=== [$(date)] Training finished with exit code $EXIT_CODE ==="

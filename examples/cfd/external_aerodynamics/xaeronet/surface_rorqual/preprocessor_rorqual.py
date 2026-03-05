@@ -156,6 +156,7 @@ def process_run(
         return
 
     try:
+        print("**********LOADING STL AND VTP FILES********************")
         # Load the STL and VTP files
         obj = Tessellation.from_stl(stl_file, airtight=False)
         surface_mesh = read_vtp(vtp_file)
@@ -177,6 +178,7 @@ def process_run(
         edge_destinations = []
 
         # Precompute the nearest neighbors for surface vertices
+        print("**********PRECOMPUTING NEAREST NEIGHBORS********************")
         nbrs_surface = NearestNeighbors(n_neighbors=1, algorithm="ball_tree").fit(
             surface_vertices
         )
@@ -193,7 +195,7 @@ def process_run(
             )
             area = boundary["area"]
 
-            # Concatenate new points with the previous ones
+            # Concatenate new points with the previous onesGood question — and I need to correc
             all_points = np.vstack([all_points, points])
             all_normals = np.vstack([all_normals, normals])
             all_areas = np.vstack([all_areas, area])
@@ -211,6 +213,7 @@ def process_run(
             edge_destinations.extend(dst_within)
 
         # Now, compute pressure and shear stress for the final combined point cloud
+        print("**********COMPUTING PRESSURE AND SHEAR STRESS FOR FINAL POINT CLOUD********************")
         _, indices = nbrs_surface.kneighbors(all_points)
         indices = indices.flatten()
 
@@ -316,6 +319,7 @@ def process_all_runs(
 
 @hydra.main(version_base="1.3", config_path="conf", config_name="config")
 def main(cfg: DictConfig) -> None:
+    print("*****************GOT INTO THE MAIN FUNCTION**********************************")
     process_all_runs(
         base_path=to_absolute_path(cfg.data_path),
         num_points=cfg.num_nodes,
@@ -328,4 +332,5 @@ def main(cfg: DictConfig) -> None:
 
 
 if __name__ == "__main__":
+    print("*********************GOT INTO THE PYTHON FILE******************************")
     main()
