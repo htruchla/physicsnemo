@@ -48,7 +48,7 @@ echo "=== Nodes: $SLURM_NODELIST | Total GPUs (world size): $WORLD_SIZE ==="
 # Force NCCL to use InfiniBand for inter-node communication
 export NCCL_SOCKET_IFNAME=ib
 export NCCL_IB_DISABLE=0
-export NCCL_DEBUG=INFO   # temporarily — shows NCCL init details in the .err log
+# export NCCL_DEBUG=INFO   # temporarily — shows NCCL init details in the .err log
 
 echo "=== MASTER_ADDR: $MASTER_ADDR ==="
 
