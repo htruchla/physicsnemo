@@ -49,7 +49,7 @@ validation_partitions_path: /home/htruchla/links/scratch/XAERONET/partitions_val
 test_partitions_path: /home/htruchla/links/scratch/XAERONET/partitions_test_DEBUGSET           # Path to the test partitions (.bin files)
 stats_file: global_stats.json                       # Path to the global statistics (.json file)
 checkpoint_filename: model_checkpoint.pth           # Filename of the model checkpoint
-num_epochs: 2000                                    # Number of epochs
+num_epochs: 3 # ORIGINALLY 2000      - CHANGED FOR DEBUGGING                              # Number of epochs
 start_lr: 0.001                                     # Initial learning rate (cos annealing schedule is used)
 end_lr: 0.000001                                    # Final learning rate (cos annealing schedule is used)
 save_checkpoint_freq: 5                             # Frequency of saving the model checkpoint
