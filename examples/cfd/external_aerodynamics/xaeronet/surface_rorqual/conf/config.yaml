@@ -17,7 +17,7 @@
 hydra:
   job:
     chdir: true
-    name: XAeroNetS_smallerjob
+    name: XAeroNetS_DEBUGSET
   run:
     dir: /lustre10/scratch/htruchla/XAERONET/outputs/${hydra:job.name}
 
@@ -48,7 +48,7 @@ partitions_path: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSE
 validation_partitions_path: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET  # Path to the validation partitions (.bin files)
 test_partitions_path: /lustre10/scratch/htruchla/XAERONET/partitions_test_DEBUGSET           # Path to the test partitions (.bin files)
 stats_file: global_stats.json                       # Path to the global statistics (.json file)
-checkpoint_filename: model_checkpoint_smallerjob.pth           # Filename of the model checkpoint
+checkpoint_filename: model_checkpoint_DEBUGSET.pth           # Filename of the model checkpoint
 num_epochs: 10 # ORIGINALLY 2000      - CHANGED FOR DEBUGGING                              # Number of epochs
 start_lr: 0.001                                     # Initial learning rate (cos annealing schedule is used)
 end_lr: 0.000001                                    # Final learning rate (cos annealing schedule is used)

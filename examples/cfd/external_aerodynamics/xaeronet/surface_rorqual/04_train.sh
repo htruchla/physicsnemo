@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=04_xaeronet_train_smallerjob
-#SBATCH --output=logs/04_xaeronet_train_smallerjob.out
-#SBATCH --error=logs/04_xaeronet_train_smallerjob.err
+#SBATCH --job-name=04_xaeronet_train_DEBUGSET
+#SBATCH --output=logs/04_xaeronet_train_DEBUGSET.out
+#SBATCH --error=logs/04_xaeronet_train_DEBUGSET.err
 #SBATCH --time=48:00:00
 #SBATCH --mem=256G
 #SBATCH --cpus-per-task=8         # CPU threads per GPU worker for data loading
