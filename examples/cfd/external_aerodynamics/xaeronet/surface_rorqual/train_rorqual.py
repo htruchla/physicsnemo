@@ -28,6 +28,17 @@ and validation metrics to TensorBoard and optionally integrates with Weights and
 experiment tracking.
 """
 
+"""
+MAKE SURE IF YOU ARE RUNNING ON RORQUAL OR NARVAL YOU USE WANDB TO TRACK EXPERIMENTS IN OFFLINE MODE 
+-it will crash because it is attempting to sync on the internet 
+
+https://docs.alliancecan.ca/wiki/Weights_%26_Biases_(wandb)/en
+
+
+"""
+
+
+
 import os
 import sys
 import json
@@ -64,7 +75,8 @@ def main(cfg: DictConfig) -> None:
     # Enable cuDNN auto-tuner
     torch.backends.cudnn.benchmark = cfg.enable_cudnn_benchmark
 
-    # Instantiate the distributed manager
+    # Instantiate the distributed manager. This will detect the number of processors the job was launched
+    # and set those config parameters appropriately 
     DistributedManager.initialize()
     dist = DistributedManager()
     device = dist.device
@@ -77,7 +89,7 @@ def main(cfg: DictConfig) -> None:
             project="aws_drivaer",
             entity="PhysicsNeMo",
             name="aws_drivaer",
-            mode="disabled",
+            mode="offline", #use disabled if you want to use the internet to sync, keep offline when working on narval or rorqual
             group="group",
             save_code=True,
         )
@@ -87,8 +99,13 @@ def main(cfg: DictConfig) -> None:
     amp_device = "cuda"
 
     # Find all .bin files in the directory
+    print(f"Looking for training data at: {to_absolute_path(cfg.partitions_path)}")
     train_dataset = find_bin_files(to_absolute_path(cfg.partitions_path))
+    print(f"train_dataset made of size {len(train_dataset)}")
+
+    print(f"Looking for validation data at: {to_absolute_path(cfg.validation_partitions_path)}")
     valid_dataset = find_bin_files(to_absolute_path(cfg.validation_partitions_path))
+    print(f"valid_dataset made of size {len(valid_dataset)}")
 
     # Prepare the stats
     with open(to_absolute_path(cfg.stats_file), "r") as f:
@@ -106,6 +123,7 @@ def main(cfg: DictConfig) -> None:
         use_ddp=True,
         num_workers=0,
     )
+    print(f"train_dataloader made of size {len(train_dataloader)}")
 
     if dist.rank == 0:
         validation_dataloader = create_dataloader(

@@ -52,6 +52,17 @@ export NCCL_IB_DISABLE=0
 
 echo "=== MASTER_ADDR: $MASTER_ADDR ==="
 
+#MAKE SURE wandb IS OFFLINE WHEN RUNNING ON RORQUAL/NARVAL/TamIA, IT WILL CRASH OTHERWISE BC IT IS TRYING TO SYNC 
+wandb offline 
+
+echo "=== Checking data paths from compute node ==="
+ls /home/htruchla/links/scratch/XAERONET/partitions_training_DEBUGSET/ || echo "TRAINING DIR NOT ACCESSIBLE"
+ls /home/htruchla/links/scratch/XAERONET/partitions_val_DEBUGSET/ || echo "VAL DIR NOT ACCESSIBLE"
+ls /home/htruchla/links/scratch/XAERONET/ || echo "BASE DIR NOT ACCESSIBLE"
+
+echo "=== stats_file check ==="
+ls $SLURM_SUBMIT_DIR/global_stats.json || echo "global_stats.json NOT FOUND in submit dir"
+
 srun python -u train_rorqual.py
 
 EXIT_CODE=$?
