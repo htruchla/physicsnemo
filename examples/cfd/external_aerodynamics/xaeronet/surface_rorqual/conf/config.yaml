@@ -17,7 +17,7 @@
 hydra:
   job:
     chdir: true
-    name: XAeroNetS
+    name: XAeroNetS_smallerjob
   run:
     dir: /home/htruchla/links/scratch/XAERONET/outputs/${hydra:job.name}
 
@@ -36,8 +36,8 @@ save_point_clouds: false                             # Save point clouds for the
 # │           Model Configuration             │
 # └───────────────────────────────────────────┘
 
-num_message_passing_layers: 15                       # Number of message passing layers
-hidden_dim: 512                                      # Hidden dimension of the model
+num_message_passing_layers: 8 # used to be 15                       # Number of message passing layers
+hidden_dim: 64 # used to be 512                                      # Hidden dimension of the model
 activation: silu                                     # Activation function
 
 # ┌───────────────────────────────────────────┐
@@ -48,7 +48,7 @@ partitions_path: /home/htruchla/links/scratch/XAERONET/partitions_training_DEBUG
 validation_partitions_path: /home/htruchla/links/scratch/XAERONET/partitions_val_DEBUGSET  # Path to the validation partitions (.bin files)
 test_partitions_path: /home/htruchla/links/scratch/XAERONET/partitions_test_DEBUGSET           # Path to the test partitions (.bin files)
 stats_file: global_stats.json                       # Path to the global statistics (.json file)
-checkpoint_filename: model_checkpoint.pth           # Filename of the model checkpoint
+checkpoint_filename: model_checkpoint_smallerjob.pth           # Filename of the model checkpoint
 num_epochs: 10 # ORIGINALLY 2000      - CHANGED FOR DEBUGGING                              # Number of epochs
 start_lr: 0.001                                     # Initial learning rate (cos annealing schedule is used)
 end_lr: 0.000001                                    # Final learning rate (cos annealing schedule is used)

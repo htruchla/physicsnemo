@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=04_xaeronet_train
-#SBATCH --output=logs/04_xaeronet_train.out
-#SBATCH --error=logs/04_xaeronet_train.err
+#SBATCH --job-name=04_xaeronet_train_smallerjob
+#SBATCH --output=logs/04_xaeronet_train_smallerjob.out
+#SBATCH --error=logs/04_xaeronet_train_smallerjob.err
 #SBATCH --time=48:00:00
 #SBATCH --mem=256G
 #SBATCH --cpus-per-task=8         # CPU threads per GPU worker for data loading
@@ -13,7 +13,7 @@
 #SBATCH --nodes=2                 # Number of GPU nodes — adjust to your allocation
 #SBATCH --ntasks-per-node=4       # One task per GPU; must equal --gres=gpu:N below
 
-#SBATCH --gres=gpu:4              # GPUs per node — adjust to match ntasks-per-node
+#SBATCH --gres=gpu:4              # increase when going to larger run GPUs per node — adjust to match ntasks-per-node
 #SBATCH --exclude=rg32601         #excluding suspected faulty node
 # ---------- Environment ----------
 module --force purge
