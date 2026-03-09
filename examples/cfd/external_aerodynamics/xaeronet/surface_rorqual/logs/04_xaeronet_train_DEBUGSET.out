@@ -1,0 +1,81 @@
+=== [Sat 07 Mar 2026 05:52:48 AM EST] Training started ===
+=== Nodes: rg[21807,31607] | Total GPUs (world size): 8 ===
+=== MASTER_ADDR: rg21807 ===
+W&B offline. Running your script from this directory will only write metadata locally. Use `wandb disabled` to completely turn off W&B.
+=== Checking data paths from compute node ===
+graph_partitions_81.bin
+graph_partitions_82.bin
+graph_partitions_83.bin
+graph_partitions_84.bin
+graph_partitions_87.bin
+graph_partitions_88.bin
+graph_partitions_8.bin
+graph_partitions_78.bin
+graph_partitions_80.bin
+graph_partitions_91.bin
+outputs
+partitions_OLD
+partitions_test
+partitions_test_DEBUGSET
+partitions_training
+partitions_training_DEBUGSET
+partitions_val
+partitions_val_DEBUGSET
+XAERONET_raw_files
+=== stats_file check ===
+/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/global_stats.json
+Rank 5 of 8
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
+train_dataset made of size 7
+Rank 2 of 8
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
+Rank 1 of 8
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
+Rank 6 of 8
+train_dataset made of size 7
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
+train_dataset made of size 7
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
+valid_dataset made of size 3
+train_dataset made of size 7
+valid_dataset made of size 3
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
+valid_dataset made of size 3
+valid_dataset made of size 3
+Rank 3 of 8
+Rank 7 of 8
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
+train_dataset made of size 7
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
+train_dataset made of size 7
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
+valid_dataset made of size 3
+valid_dataset made of size 3
+Rank 0 of 8
+Rank 4 of 8
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
+train_dataset made of size 7
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
+valid_dataset made of size 3
+train_dataloader made of size 0
+train_dataloader made of size 0
+train_dataloader made of size 0
+train_dataloader made of size 0
+train_dataloader made of size 0
+train_dataloader made of size 0
+train_dataloader made of size 0
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
+train_dataset made of size 7
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
+valid_dataset made of size 3
+train_dataloader made of size 0
+Training dataset size: 0
+Validation dataset size: 3
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /lustre10/scratch/htruchla/XAERONET/outputs/XAeroNetS_DEBUGSET/wandb/wandb/offline-run-20260307_055316-tk24uizx[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/wandb/offline-run-20260307_055316-tk24uizx/logs[0m
+=== [Sat 07 Mar 2026 05:53:20 AM EST] Training finished with exit code 1 ===
