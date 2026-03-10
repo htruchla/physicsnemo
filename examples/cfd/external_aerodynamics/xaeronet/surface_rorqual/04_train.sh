@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=04_xaeronet_train_DEBUGSET
-#SBATCH --output=logs/04_xaeronet_train_DEBUGSET.out
-#SBATCH --error=logs/04_xaeronet_train_DEBUGSET.err
+#SBATCH --job-name=04_xaeronet_train
+#SBATCH --output=logs/04_xaeronet_train.out
+#SBATCH --error=logs/04_xaeronet_train.err
 #SBATCH --time=48:00:00
 #SBATCH --mem=256G
 #SBATCH --cpus-per-task=8         # CPU threads per GPU worker for data loading
@@ -56,8 +56,8 @@ echo "=== MASTER_ADDR: $MASTER_ADDR ==="
 wandb offline 
 
 echo "=== Checking data paths from compute node ==="
-ls /home/htruchla/links/scratch/XAERONET/partitions_training_DEBUGSET/ || echo "TRAINING DIR NOT ACCESSIBLE"
-ls /home/htruchla/links/scratch/XAERONET/partitions_val_DEBUGSET/ || echo "VAL DIR NOT ACCESSIBLE"
+ls /home/htruchla/links/scratch/XAERONET/partitions_training/ || echo "TRAINING DIR NOT ACCESSIBLE"
+ls /home/htruchla/links/scratch/XAERONET/partitions_val/ || echo "VAL DIR NOT ACCESSIBLE"
 ls /home/htruchla/links/scratch/XAERONET/ || echo "BASE DIR NOT ACCESSIBLE"
 
 echo "=== stats_file check ==="
