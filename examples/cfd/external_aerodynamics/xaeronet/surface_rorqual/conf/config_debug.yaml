@@ -17,7 +17,7 @@
 hydra:
   job:
     chdir: true
-    name: XAeroNetS_full_run_WITHCHECKPOINTS
+    name: XAeroNetS_DEBUGSET
   run:
     dir: /lustre10/scratch/htruchla/XAERONET/outputs/${hydra:job.name}
 
@@ -36,20 +36,20 @@ save_point_clouds: false                             # Save point clouds for the
 # │           Model Configuration             │
 # └───────────────────────────────────────────┘
 
-num_message_passing_layers: 15 # 9 for debugging                       # Number of message passing layers, needs to  be divisible by checkpoint_segments, controls how manu rounds of message passing the GNN performs 
-hidden_dim: 512 # changed to 64 for debugging                                      # Hidden dimension of the model
+num_message_passing_layers: 9 # changed for debugging                       # Number of message passing layers, needs to  be divisible by checkpoint_segments, controls how manu rounds of message passing the GNN performs 
+hidden_dim: 64 # changed for debugging                                      # Hidden dimension of the model
 activation: silu                                     # Activation function
 
 # ┌───────────────────────────────────────────┐
 # │          Training Configuration           │
 # └───────────────────────────────────────────┘
 
-partitions_path: /lustre10/scratch/htruchla/XAERONET/partitions_training                         # Path to the partitions (.bin files)
-validation_partitions_path: /lustre10/scratch/htruchla/XAERONET/partitions_val  # Path to the validation partitions (.bin files)
-test_partitions_path: /lustre10/scratch/htruchla/XAERONET/partitions_test           # Path to the test partitions (.bin files)
+partitions_path: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET                         # Path to the partitions (.bin files)
+validation_partitions_path: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET  # Path to the validation partitions (.bin files)
+test_partitions_path: /lustre10/scratch/htruchla/XAERONET/partitions_test_DEBUGSET           # Path to the test partitions (.bin files)
 stats_file: global_stats.json                       # Path to the global statistics (.json file)
-checkpoint_filename: model_checkpoint_full_run_WITHCHECKPOINTS.pth           # Filename of the model checkpoint
-num_epochs: 2000 # changed to 10CHANGED FOR DEBUGGING                              # Number of epochs
+checkpoint_filename: model_checkpoint_DEBUGSET.pth           # Filename of the model checkpoint
+num_epochs: 10 # changed for debugging                             # Number of epochs
 start_lr: 0.001                                     # Initial learning rate (cos annealing schedule is used)
 end_lr: 0.000001                                    # Final learning rate (cos annealing schedule is used)
 save_checkpoint_freq: 1                             # Frequency of saving the model checkpoint

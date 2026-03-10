@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --job-name=04_xaeronet_train
-#SBATCH --output=logs/full_run/04_xaeronet_train_%j.out
-#SBATCH --error=logs/full_run/04_xaeronet_train_%j.err
-#SBATCH --time=48:00:00
+#SBATCH --job-name=04_xaeronet_train_debugging
+#SBATCH --output=logs/debugging/04_xaeronet_train_debugging_%j.out
+#SBATCH --error=logs/debugging/04_xaeronet_train_debugging_%j.err
+#SBATCH --time=00:20:00
 #SBATCH --mem=256G
 #SBATCH --cpus-per-task=8         # CPU threads per GPU worker for data loading
 
@@ -16,9 +16,7 @@
 #SBATCH --gres=gpu:4              # increase when going to larger run GPUs per node — adjust to match ntasks-per-node
 #SBATCH --exclude=rg32601         #excluding suspected faulty node
 
-
-
-# ---------- Resubmission parameters ----------
+# ---------- Resubmission guard ----------
 MAX_RESUBMISSIONS=10
 RESUBMIT_COUNT=${RESUBMIT_COUNT:-0}  #inherit from env when resubmitting 
 
@@ -37,7 +35,7 @@ source "$VENV_PATH/bin/activate"
 # ---------- Setup ----------
 cd $SLURM_SUBMIT_DIR
 mkdir -p logs tensorboard checkpoints 
-mkdir -p logs/full_run
+mkdir -p logs/full_run logs/debugging
 
 # ---------- Distributed setup ----------
 export MASTER_ADDR=$(scontrol show hostname "$SLURM_NODELIST" | head -n 1)
@@ -56,7 +54,7 @@ echo "===  : $MASTER_ADDR ==="
 wandb offline #MAKE SURE wandb IS OFFLINE WHEN RUNNING ON RORQUAL/NARVAL/TamIA, IT WILL CRASH OTHERWISE BC IT IS TRYING TO SYNC ONLINE
 
 echo " === RUNNING train_rorqual.py ==="
-srun python -u train_rorqual.py --config-name=config
+srun python -u train_rorqual.py --config-name=config_debug
 
 EXIT_CODE=$?
 echo "=== [$(date)] Job finished with exit code $EXIT_CODE ==="

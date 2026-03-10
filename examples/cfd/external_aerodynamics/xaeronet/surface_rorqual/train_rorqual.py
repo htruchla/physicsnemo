@@ -57,6 +57,9 @@ from physicsnemo.distributed import DistributedManager
 from physicsnemo.launch.logging.wandb import initialize_wandb
 from physicsnemo.models.meshgraphnet import MeshGraphNet
 
+#HANA ADDED LIBRARIES
+import time
+
 # Get the absolute path to the parent directory
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(parent_dir)
@@ -80,7 +83,7 @@ def main(cfg: DictConfig) -> None:
     DistributedManager.initialize()
     dist = DistributedManager()
     device = dist.device
-    print(f"Rank {dist.rank} of {dist.world_size}")
+    # print(f"Rank {dist.rank} of {dist.world_size}")
 
     # Instantiate the writers
     if dist.rank == 0:
@@ -99,13 +102,9 @@ def main(cfg: DictConfig) -> None:
     amp_device = "cuda"
 
     # Find all .bin files in the directory
-    print(f"Looking for training data at: {to_absolute_path(cfg.partitions_path)}")
     train_dataset = find_bin_files(to_absolute_path(cfg.partitions_path))
-    print(f"train_dataset made of size {len(train_dataset)}")
 
-    print(f"Looking for validation data at: {to_absolute_path(cfg.validation_partitions_path)}")
     valid_dataset = find_bin_files(to_absolute_path(cfg.validation_partitions_path))
-    print(f"valid_dataset made of size {len(valid_dataset)}")
 
     # Prepare the stats
     with open(to_absolute_path(cfg.stats_file), "r") as f:
@@ -123,7 +122,6 @@ def main(cfg: DictConfig) -> None:
         use_ddp=True,
         num_workers=0,
     )
-    print(f"train_dataloader made of size {len(train_dataloader)}")
 
     if dist.rank == 0:
         validation_dataloader = create_dataloader(
@@ -157,7 +155,8 @@ def main(cfg: DictConfig) -> None:
         do_concat_trick=cfg.use_concat_trick,
         num_processor_checkpoint_segments=cfg.checkpoint_segments,
     ).to(device)
-    print(f"Number of trainable parameters: {count_trainable_params(model)}")
+    if dist.rank == 0:
+        print(f"Number of trainable parameters: {count_trainable_params(model)}")
 
     # DistributedDataParallel wrapper
     if dist.world_size > 1:
@@ -177,16 +176,33 @@ def main(cfg: DictConfig) -> None:
         optimizer, T_max=2000, eta_min=1e-6
     )
     scaler = GradScaler()
-    print("Instantiated the model and optimizer")
+    if dist.rank == 0:
+        print("Instantiated the model and optimizer")
 
-    # Check if there's a checkpoint to resume from
+    # Check if there's a checkpoint to resume from - HANA ADDED
+    latest_ptr = f"{cfg.checkpoint_filename}_latest.txt"
+    if os.path.exists(latest_ptr):
+        with open(latest_ptr) as f:
+            ckpt_to_load = f.read().strip()
+    else:
+        ckpt_to_load = cfg.checkpoint_filename  # fallback for first run
+
     start_epoch, _ = load_checkpoint(
-        model, optimizer, scaler, scheduler, cfg.checkpoint_filename
+        model, optimizer, scaler, scheduler, ckpt_to_load
     )
 
+    #adding an early exit if job is already complete - HANA ADDED
+    if start_epoch >= cfg.num_epochs:
+        if dist.rank == 0:
+            print(f"Training already complete")
+        DistributedManager.cleanup()
+        return
+
     # Training loop
-    print("Training started")
+    if dist.rank == 0:
+        print("Training started")
     for epoch in range(start_epoch, cfg.num_epochs):
+        start_time = time.perf_counter()
         model.train()
         total_loss = 0
         for graph_partitions, _ in train_dataloader:
@@ -241,6 +257,7 @@ def main(cfg: DictConfig) -> None:
             if dist.world_size > 1:
                 torch.distributed.barrier()
             if dist.rank == 0:
+                ckpt_name = f"{cfg.checkpoint_filename}_{'a' if (epoch % 2 == 0) else 'b'}.pth"
                 save_checkpoint(
                     model,
                     optimizer,
@@ -248,8 +265,10 @@ def main(cfg: DictConfig) -> None:
                     scheduler,
                     epoch + 1,
                     loss.item(),
-                    cfg.checkpoint_filename,
+                    ckpt_name,
                 )
+                with open(f"{cfg.checkpoint_filename}_latest.txt", "w") as f:
+                    f.write(ckpt_name)
 
         ######################################
         # Validation #
@@ -388,6 +407,11 @@ def main(cfg: DictConfig) -> None:
             writer.add_scalar(
                 "validation_loss", valid_loss / num_valid_mini_batches, epoch
             )
+
+        end_time = time.perf_counter()
+        elapsed_time = end_time - start_time
+        if dist.rank == 0:
+            print(f"Elapsed time for epoch {epoch}: {elapsed_time:.4f} seconds")
 
     # Save final checkpoint
     if dist.world_size > 1:
