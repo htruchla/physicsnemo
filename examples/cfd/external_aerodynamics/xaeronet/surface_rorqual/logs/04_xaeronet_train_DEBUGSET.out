@@ -1,8 +1,9 @@
-=== [Sat 07 Mar 2026 05:52:48 AM EST] Training started ===
-=== Nodes: rg[21807,31607] | Total GPUs (world size): 8 ===
-=== MASTER_ADDR: rg21807 ===
+=== [Mon 09 Mar 2026 08:43:21 PM EDT] Training started ===
+=== Nodes: rg[31601-31602] | Total GPUs (world size): 8 ===
+=== MASTER_ADDR: rg31601 ===
 W&B offline. Running your script from this directory will only write metadata locally. Use `wandb disabled` to completely turn off W&B.
 === Checking data paths from compute node ===
+graph_partitions_278.bin
 graph_partitions_81.bin
 graph_partitions_82.bin
 graph_partitions_83.bin
@@ -25,57 +26,104 @@ XAERONET_raw_files
 === stats_file check ===
 /lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/global_stats.json
 Rank 5 of 8
-Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
-train_dataset made of size 7
-Rank 2 of 8
-Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
-Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
-Rank 1 of 8
-Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
-Rank 6 of 8
-train_dataset made of size 7
-Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
-Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
-train_dataset made of size 7
-Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
-valid_dataset made of size 3
-train_dataset made of size 7
-valid_dataset made of size 3
-Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
-valid_dataset made of size 3
-valid_dataset made of size 3
 Rank 3 of 8
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
+train_dataset made of size 8
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
+train_dataset made of size 8
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
+valid_dataset made of size 3
 Rank 7 of 8
 Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
+valid_dataset made of size 3
+Rank 2 of 8
+train_dataset made of size 8
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
 Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
-train_dataset made of size 7
-Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
-train_dataset made of size 7
+valid_dataset made of size 3
+train_dataset made of size 8
 Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
 valid_dataset made of size 3
+Rank 1 of 8
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
+train_dataset made of size 8
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
 valid_dataset made of size 3
-Rank 0 of 8
+Rank 6 of 8
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
+train_dataset made of size 8
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
+valid_dataset made of size 3
 Rank 4 of 8
 Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
-train_dataset made of size 7
+train_dataset made of size 8
 Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
+Rank 0 of 8
 valid_dataset made of size 3
-train_dataloader made of size 0
-train_dataloader made of size 0
-train_dataloader made of size 0
-train_dataloader made of size 0
-train_dataloader made of size 0
-train_dataloader made of size 0
-train_dataloader made of size 0
+train_dataloader made of size 1
+train_dataloader made of size 1
+train_dataloader made of size 1
+train_dataloader made of size 1
+train_dataloader made of size 1
+train_dataloader made of size 1
+train_dataloader made of size 1
+Number of trainable parameters: 1378692
+Number of trainable parameters: 1378692
+Number of trainable parameters: 1378692
+Number of trainable parameters: 1378692
+Number of trainable parameters: 1378692
+Number of trainable parameters: 1378692
+Number of trainable parameters: 1378692
 Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training_DEBUGSET
-train_dataset made of size 7
+train_dataset made of size 8
 Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val_DEBUGSET
 valid_dataset made of size 3
-train_dataloader made of size 0
-Training dataset size: 0
+train_dataloader made of size 1
+Training dataset size: 8
 Validation dataset size: 3
+Number of trainable parameters: 1378692
+Instantiated the model and optimizer
+Instantiated the model and optimizer
+Instantiated the model and optimizer
+Instantiated the model and optimizer
+No checkpoint found at model_checkpoint_DEBUGSET.pth
+No checkpoint found at model_checkpoint_DEBUGSET.pth
+No checkpoint found at model_checkpoint_DEBUGSET.pth
+Training started
+Training started
+Training started
+No checkpoint found at model_checkpoint_DEBUGSET.pth
+Training started
+Instantiated the model and optimizer
+Instantiated the model and optimizer
+Instantiated the model and optimizer
+Instantiated the model and optimizer
+No checkpoint found at model_checkpoint_DEBUGSET.pth
+No checkpoint found at model_checkpoint_DEBUGSET.pth
+No checkpoint found at model_checkpoint_DEBUGSET.pth
+No checkpoint found at model_checkpoint_DEBUGSET.pth
+Training started
+Training started
+Training started
+Training started
+Epoch 1, Learning Rate: 0.000999999383766702, Total Loss: 1.1289497464895248
+Checkpoint saved: model_checkpoint_DEBUGSET.pth
+Epoch 1, Validation Error: 1.1459911912679672
+Epoch 2, Learning Rate: 0.0009999975350683283, Total Loss: 1.156723216176033
+Epoch 3, Learning Rate: 0.0009999944539094403, Total Loss: 1.1543457806110382
+Epoch 4, Learning Rate: 0.0009999901402976406, Total Loss: 1.2065233886241913
+Epoch 5, Learning Rate: 0.0009999845942435725, Total Loss: 1.0413313508033752
+Epoch 6, Learning Rate: 0.0009999778157609204, Total Loss: 1.0440593361854553
+Checkpoint saved: model_checkpoint_DEBUGSET.pth
+Epoch 7, Learning Rate: 0.0009999698048664097, Total Loss: 1.0418405830860138
+Epoch 8, Learning Rate: 0.0009999605615798064, Total Loss: 1.033928394317627
+Epoch 9, Learning Rate: 0.000999950085923917, Total Loss: 1.029866099357605
+Epoch 10, Learning Rate: 0.0009999383779245895, Total Loss: 1.0302232801914215
+Checkpoint saved: final_model_checkpoint.pth
+Training complete
 [1;34mwandb[0m: 
 [1;34mwandb[0m: You can sync this run to the cloud by running:
-[1;34mwandb[0m: [1mwandb sync /lustre10/scratch/htruchla/XAERONET/outputs/XAeroNetS_DEBUGSET/wandb/wandb/offline-run-20260307_055316-tk24uizx[0m
-[1;34mwandb[0m: Find logs at: [1;35mwandb/wandb/offline-run-20260307_055316-tk24uizx/logs[0m
-=== [Sat 07 Mar 2026 05:53:20 AM EST] Training finished with exit code 1 ===
+[1;34mwandb[0m: [1mwandb sync /lustre10/scratch/htruchla/XAERONET/outputs/XAeroNetS_DEBUGSET/wandb/wandb/offline-run-20260309_204349-mft4dizb[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/wandb/offline-run-20260309_204349-mft4dizb/logs[0m
+=== [Mon 09 Mar 2026 08:45:08 PM EDT] Training finished with exit code 0 ===
