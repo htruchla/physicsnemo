@@ -1,14 +1,475 @@
-=== [Thu 05 Mar 2026 07:38:33 PM EST] Training started ===
-=== Nodes: rg[31606,32403] | Total GPUs (world size): 8 ===
-=== MASTER_ADDR: rg31606 ===
+=== [Tue 10 Mar 2026 06:42:24 AM EDT] Training started ===
+=== Nodes: rg[21802,32503] | Total GPUs (world size): 8 ===
+=== MASTER_ADDR: rg21802 ===
+W&B offline. Running your script from this directory will only write metadata locally. Use `wandb disabled` to completely turn off W&B.
+=== Checking data paths from compute node ===
+graph_partitions_101.bin
+graph_partitions_103.bin
+graph_partitions_106.bin
+graph_partitions_107.bin
+graph_partitions_108.bin
+graph_partitions_10.bin
+graph_partitions_110.bin
+graph_partitions_111.bin
+graph_partitions_112.bin
+graph_partitions_113.bin
+graph_partitions_114.bin
+graph_partitions_115.bin
+graph_partitions_116.bin
+graph_partitions_117.bin
+graph_partitions_119.bin
+graph_partitions_11.bin
+graph_partitions_120.bin
+graph_partitions_121.bin
+graph_partitions_123.bin
+graph_partitions_124.bin
+graph_partitions_125.bin
+graph_partitions_126.bin
+graph_partitions_128.bin
+graph_partitions_129.bin
+graph_partitions_12.bin
+graph_partitions_130.bin
+graph_partitions_131.bin
+graph_partitions_134.bin
+graph_partitions_135.bin
+graph_partitions_137.bin
+graph_partitions_138.bin
+graph_partitions_139.bin
+graph_partitions_13.bin
+graph_partitions_140.bin
+graph_partitions_141.bin
+graph_partitions_142.bin
+graph_partitions_143.bin
+graph_partitions_145.bin
+graph_partitions_146.bin
+graph_partitions_148.bin
+graph_partitions_149.bin
+graph_partitions_150.bin
+graph_partitions_151.bin
+graph_partitions_153.bin
+graph_partitions_154.bin
+graph_partitions_155.bin
+graph_partitions_156.bin
+graph_partitions_157.bin
+graph_partitions_158.bin
+graph_partitions_15.bin
+graph_partitions_162.bin
+graph_partitions_163.bin
+graph_partitions_165.bin
+graph_partitions_168.bin
+graph_partitions_16.bin
+graph_partitions_170.bin
+graph_partitions_171.bin
+graph_partitions_172.bin
+graph_partitions_173.bin
+graph_partitions_174.bin
+graph_partitions_175.bin
+graph_partitions_176.bin
+graph_partitions_178.bin
+graph_partitions_179.bin
+graph_partitions_181.bin
+graph_partitions_182.bin
+graph_partitions_188.bin
+graph_partitions_189.bin
+graph_partitions_191.bin
+graph_partitions_192.bin
+graph_partitions_193.bin
+graph_partitions_194.bin
+graph_partitions_195.bin
+graph_partitions_197.bin
+graph_partitions_198.bin
+graph_partitions_19.bin
+graph_partitions_1.bin
+graph_partitions_200.bin
+graph_partitions_201.bin
+graph_partitions_202.bin
+graph_partitions_203.bin
+graph_partitions_204.bin
+graph_partitions_205.bin
+graph_partitions_206.bin
+graph_partitions_207.bin
+graph_partitions_209.bin
+graph_partitions_20.bin
+graph_partitions_210.bin
+graph_partitions_212.bin
+graph_partitions_213.bin
+graph_partitions_214.bin
+graph_partitions_216.bin
+graph_partitions_219.bin
+graph_partitions_21.bin
+graph_partitions_223.bin
+graph_partitions_224.bin
+graph_partitions_225.bin
+graph_partitions_226.bin
+graph_partitions_227.bin
+graph_partitions_229.bin
+graph_partitions_22.bin
+graph_partitions_230.bin
+graph_partitions_234.bin
+graph_partitions_235.bin
+graph_partitions_236.bin
+graph_partitions_237.bin
+graph_partitions_238.bin
+graph_partitions_244.bin
+graph_partitions_245.bin
+graph_partitions_246.bin
+graph_partitions_247.bin
+graph_partitions_249.bin
+graph_partitions_24.bin
+graph_partitions_252.bin
+graph_partitions_253.bin
+graph_partitions_254.bin
+graph_partitions_255.bin
+graph_partitions_256.bin
+graph_partitions_258.bin
+graph_partitions_259.bin
+graph_partitions_260.bin
+graph_partitions_262.bin
+graph_partitions_267.bin
+graph_partitions_269.bin
+graph_partitions_26.bin
+graph_partitions_270.bin
+graph_partitions_271.bin
+graph_partitions_272.bin
+graph_partitions_273.bin
+graph_partitions_274.bin
+graph_partitions_276.bin
+graph_partitions_278.bin
+graph_partitions_279.bin
+graph_partitions_281.bin
+graph_partitions_285.bin
+graph_partitions_287.bin
+graph_partitions_289.bin
+graph_partitions_28.bin
+graph_partitions_290.bin
+graph_partitions_293.bin
+graph_partitions_299.bin
+graph_partitions_29.bin
+graph_partitions_2.bin
+graph_partitions_300.bin
+graph_partitions_303.bin
+graph_partitions_304.bin
+graph_partitions_305.bin
+graph_partitions_306.bin
+graph_partitions_308.bin
+graph_partitions_309.bin
+graph_partitions_30.bin
+graph_partitions_312.bin
+graph_partitions_313.bin
+graph_partitions_314.bin
+graph_partitions_315.bin
+graph_partitions_318.bin
+graph_partitions_319.bin
+graph_partitions_322.bin
+graph_partitions_324.bin
+graph_partitions_327.bin
+graph_partitions_328.bin
+graph_partitions_32.bin
+graph_partitions_331.bin
+graph_partitions_332.bin
+graph_partitions_334.bin
+graph_partitions_336.bin
+graph_partitions_338.bin
+graph_partitions_339.bin
+graph_partitions_33.bin
+graph_partitions_341.bin
+graph_partitions_342.bin
+graph_partitions_343.bin
+graph_partitions_344.bin
+graph_partitions_347.bin
+graph_partitions_34.bin
+graph_partitions_350.bin
+graph_partitions_352.bin
+graph_partitions_353.bin
+graph_partitions_354.bin
+graph_partitions_355.bin
+graph_partitions_356.bin
+graph_partitions_357.bin
+graph_partitions_358.bin
+graph_partitions_359.bin
+graph_partitions_360.bin
+graph_partitions_361.bin
+graph_partitions_363.bin
+graph_partitions_365.bin
+graph_partitions_366.bin
+graph_partitions_367.bin
+graph_partitions_369.bin
+graph_partitions_36.bin
+graph_partitions_372.bin
+graph_partitions_374.bin
+graph_partitions_378.bin
+graph_partitions_379.bin
+graph_partitions_37.bin
+graph_partitions_380.bin
+graph_partitions_381.bin
+graph_partitions_383.bin
+graph_partitions_384.bin
+graph_partitions_386.bin
+graph_partitions_387.bin
+graph_partitions_388.bin
+graph_partitions_389.bin
+graph_partitions_38.bin
+graph_partitions_390.bin
+graph_partitions_392.bin
+graph_partitions_393.bin
+graph_partitions_394.bin
+graph_partitions_397.bin
+graph_partitions_39.bin
+graph_partitions_3.bin
+graph_partitions_400.bin
+graph_partitions_401.bin
+graph_partitions_402.bin
+graph_partitions_404.bin
+graph_partitions_405.bin
+graph_partitions_407.bin
+graph_partitions_409.bin
+graph_partitions_410.bin
+graph_partitions_411.bin
+graph_partitions_413.bin
+graph_partitions_414.bin
+graph_partitions_415.bin
+graph_partitions_416.bin
+graph_partitions_417.bin
+graph_partitions_41.bin
+graph_partitions_420.bin
+graph_partitions_421.bin
+graph_partitions_422.bin
+graph_partitions_424.bin
+graph_partitions_425.bin
+graph_partitions_426.bin
+graph_partitions_427.bin
+graph_partitions_428.bin
+graph_partitions_429.bin
+graph_partitions_42.bin
+graph_partitions_430.bin
+graph_partitions_432.bin
+graph_partitions_433.bin
+graph_partitions_434.bin
+graph_partitions_436.bin
+graph_partitions_437.bin
+graph_partitions_438.bin
+graph_partitions_439.bin
+graph_partitions_43.bin
+graph_partitions_440.bin
+graph_partitions_442.bin
+graph_partitions_444.bin
+graph_partitions_446.bin
+graph_partitions_447.bin
+graph_partitions_448.bin
+graph_partitions_449.bin
+graph_partitions_44.bin
+graph_partitions_451.bin
+graph_partitions_452.bin
+graph_partitions_453.bin
+graph_partitions_454.bin
+graph_partitions_456.bin
+graph_partitions_459.bin
+graph_partitions_45.bin
+graph_partitions_460.bin
+graph_partitions_461.bin
+graph_partitions_462.bin
+graph_partitions_463.bin
+graph_partitions_464.bin
+graph_partitions_465.bin
+graph_partitions_467.bin
+graph_partitions_469.bin
+graph_partitions_470.bin
+graph_partitions_471.bin
+graph_partitions_472.bin
+graph_partitions_474.bin
+graph_partitions_476.bin
+graph_partitions_477.bin
+graph_partitions_478.bin
+graph_partitions_479.bin
+graph_partitions_47.bin
+graph_partitions_480.bin
+graph_partitions_481.bin
+graph_partitions_482.bin
+graph_partitions_485.bin
+graph_partitions_486.bin
+graph_partitions_487.bin
+graph_partitions_488.bin
+graph_partitions_489.bin
+graph_partitions_48.bin
+graph_partitions_490.bin
+graph_partitions_491.bin
+graph_partitions_492.bin
+graph_partitions_493.bin
+graph_partitions_495.bin
+graph_partitions_497.bin
+graph_partitions_498.bin
+graph_partitions_4.bin
+graph_partitions_500.bin
+graph_partitions_51.bin
+graph_partitions_52.bin
+graph_partitions_54.bin
+graph_partitions_55.bin
+graph_partitions_56.bin
+graph_partitions_58.bin
+graph_partitions_59.bin
+graph_partitions_61.bin
+graph_partitions_63.bin
+graph_partitions_64.bin
+graph_partitions_65.bin
+graph_partitions_66.bin
+graph_partitions_67.bin
+graph_partitions_68.bin
+graph_partitions_69.bin
+graph_partitions_6.bin
+graph_partitions_70.bin
+graph_partitions_71.bin
+graph_partitions_72.bin
+graph_partitions_74.bin
+graph_partitions_75.bin
+graph_partitions_76.bin
+graph_partitions_77.bin
+graph_partitions_7.bin
+graph_partitions_81.bin
+graph_partitions_82.bin
+graph_partitions_83.bin
+graph_partitions_84.bin
+graph_partitions_87.bin
+graph_partitions_88.bin
+graph_partitions_8.bin
+graph_partitions_90.bin
+graph_partitions_92.bin
+graph_partitions_93.bin
+graph_partitions_94.bin
+graph_partitions_95.bin
+graph_partitions_96.bin
+graph_partitions_97.bin
+graph_partitions_98.bin
+graph_partitions_99.bin
+graph_partitions_9.bin
+train_manifest.json
+graph_partitions_102.bin
+graph_partitions_105.bin
+graph_partitions_118.bin
+graph_partitions_132.bin
+graph_partitions_136.bin
+graph_partitions_144.bin
+graph_partitions_147.bin
+graph_partitions_14.bin
+graph_partitions_152.bin
+graph_partitions_166.bin
+graph_partitions_180.bin
+graph_partitions_183.bin
+graph_partitions_185.bin
+graph_partitions_187.bin
+graph_partitions_18.bin
+graph_partitions_190.bin
+graph_partitions_199.bin
+graph_partitions_208.bin
+graph_partitions_215.bin
+graph_partitions_217.bin
+graph_partitions_231.bin
+graph_partitions_232.bin
+graph_partitions_233.bin
+graph_partitions_23.bin
+graph_partitions_241.bin
+graph_partitions_242.bin
+graph_partitions_243.bin
+graph_partitions_250.bin
+graph_partitions_257.bin
+graph_partitions_25.bin
+graph_partitions_261.bin
+graph_partitions_264.bin
+graph_partitions_265.bin
+graph_partitions_266.bin
+graph_partitions_268.bin
+graph_partitions_275.bin
+graph_partitions_277.bin
+graph_partitions_27.bin
+graph_partitions_280.bin
+graph_partitions_286.bin
+graph_partitions_292.bin
+graph_partitions_296.bin
+graph_partitions_297.bin
+graph_partitions_301.bin
+graph_partitions_307.bin
+graph_partitions_310.bin
+graph_partitions_311.bin
+graph_partitions_317.bin
+graph_partitions_320.bin
+graph_partitions_321.bin
+graph_partitions_330.bin
+graph_partitions_333.bin
+graph_partitions_346.bin
+graph_partitions_349.bin
+graph_partitions_362.bin
+graph_partitions_371.bin
+graph_partitions_373.bin
+graph_partitions_375.bin
+graph_partitions_382.bin
+graph_partitions_398.bin
+graph_partitions_406.bin
+graph_partitions_431.bin
+graph_partitions_441.bin
+graph_partitions_445.bin
+graph_partitions_450.bin
+graph_partitions_455.bin
+graph_partitions_458.bin
+graph_partitions_468.bin
+graph_partitions_475.bin
+graph_partitions_496.bin
+graph_partitions_78.bin
+graph_partitions_80.bin
+graph_partitions_91.bin
+val_manifest.json
+outputs
+partitions_OLD
+partitions_test
+partitions_test_DEBUGSET
+partitions_training
+partitions_training_DEBUGSET
+partitions_val
+partitions_val_DEBUGSET
+XAERONET_raw_files
+=== stats_file check ===
+/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/global_stats.json
 Rank 7 of 8
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training
 Rank 1 of 8
-Rank 6 of 8
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training
+train_dataset made of size 338
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val
+train_dataset made of size 338
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val
 Rank 3 of 8
-Rank 5 of 8
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training
+valid_dataset made of size 73
 Rank 2 of 8
-Rank 4 of 8
+Rank 6 of 8
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training
+train_dataset made of size 338
+valid_dataset made of size 73
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val
+train_dataset made of size 338
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val
+valid_dataset made of size 73
+train_dataset made of size 338
+valid_dataset made of size 73
+Rank 5 of 8
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training
+valid_dataset made of size 73
+train_dataset made of size 338
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val
+valid_dataset made of size 73
 Rank 0 of 8
+Rank 4 of 8
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training
+train_dataset made of size 338
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val
+valid_dataset made of size 73
+train_dataloader made of size 42
+train_dataloader made of size 42
+train_dataloader made of size 42
+train_dataloader made of size 42
+train_dataloader made of size 42
+train_dataloader made of size 42
+train_dataloader made of size 42
 Number of trainable parameters: 3234308
 Number of trainable parameters: 3234308
 Number of trainable parameters: 3234308
@@ -16,30 +477,39 @@ Number of trainable parameters: 3234308
 Number of trainable parameters: 3234308
 Number of trainable parameters: 3234308
 Number of trainable parameters: 3234308
-Training dataset size: 0
-Validation dataset size: 3
+Looking for training data at: /lustre10/scratch/htruchla/XAERONET/partitions_training
+train_dataset made of size 338
+Looking for validation data at: /lustre10/scratch/htruchla/XAERONET/partitions_val
+valid_dataset made of size 73
+train_dataloader made of size 42
+Training dataset size: 336
+Validation dataset size: 73
 Number of trainable parameters: 3234308
 Instantiated the model and optimizer
 Instantiated the model and optimizer
 Instantiated the model and optimizer
 Instantiated the model and optimizer
+No checkpoint found at model_checkpoint_full_run.pth
+No checkpoint found at model_checkpoint_full_run.pth
+No checkpoint found at model_checkpoint_full_run.pth
+Training started
+Training started
+Training started
+No checkpoint found at model_checkpoint_full_run.pth
+Training started
 Instantiated the model and optimizer
 Instantiated the model and optimizer
 Instantiated the model and optimizer
 Instantiated the model and optimizer
-Checkpoint loaded: model_checkpoint.pth
+No checkpoint found at model_checkpoint_full_run.pth
 Training started
-Checkpoint loaded: model_checkpoint.pth
+No checkpoint found at model_checkpoint_full_run.pth
 Training started
-Checkpoint loaded: model_checkpoint.pth
+No checkpoint found at model_checkpoint_full_run.pth
 Training started
-Checkpoint loaded: model_checkpoint.pth
-Checkpoint loaded: model_checkpoint.pth
+No checkpoint found at model_checkpoint_full_run.pth
 Training started
-Training started
-Checkpoint loaded: model_checkpoint.pth
-Training started
-Checkpoint loaded: model_checkpoint.pth
-Checkpoint loaded: model_checkpoint.pth
-Training started
-Training started
+Epoch 1, Learning Rate: 0.000999999383766702, Total Loss: 0.9963836852638495
+Checkpoint saved: model_checkpoint_full_run.pth
+Epoch 1, Validation Error: 0.72552966061112
+=== [Tue 10 Mar 2026 02:02:59 PM EDT] Training finished with exit code 134 ===
