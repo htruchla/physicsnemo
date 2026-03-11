@@ -1,0 +1,39 @@
+=== [Wed 11 Mar 2026 08:18:56 AM EDT] Training started (resubmission #0)===
+=== Nodes: rg[31502,32602] | Total GPUs (world size): 8 ===
+===  : rg31502 ===
+W&B offline. Running your script from this directory will only write metadata locally. Use `wandb disabled` to completely turn off W&B.
+ === RUNNING train_rorqual.py ===
+Training dataset size: 8
+Validation dataset size: 3
+Number of trainable parameters: 1378692
+Instantiated the model and optimizer
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth
+Training started
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth
+Epoch 7, Learning Rate: 0.0009999698048664097, Total Loss: 1.041839525103569
+Checkpoint saved: model_checkpoint_DEBUGSET.pth_a.pth
+Elapsed time for epoch 6: 128.3361 seconds
+Epoch 8, Learning Rate: 0.0009999605615798064, Total Loss: 1.0339291393756866
+Checkpoint saved: model_checkpoint_DEBUGSET.pth_b.pth
+Elapsed time for epoch 7: 3.7115 seconds
+Epoch 9, Learning Rate: 0.000999950085923917, Total Loss: 1.0298657715320587
+Checkpoint saved: model_checkpoint_DEBUGSET.pth_a.pth
+Elapsed time for epoch 8: 3.7110 seconds
+Epoch 10, Learning Rate: 0.0009999383779245895, Total Loss: 1.0302212536334991
+Checkpoint saved: model_checkpoint_DEBUGSET.pth_b.pth
+Elapsed time for epoch 9: 3.6717 seconds
+Checkpoint saved: final_model_checkpoint.pth
+Training complete
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /lustre10/scratch/htruchla/XAERONET/outputs/XAeroNetS_DEBUGSET/wandb/wandb/offline-run-20260311_081925-vzwnreab[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/wandb/offline-run-20260311_081925-vzwnreab/logs[0m
+=== [Wed 11 Mar 2026 08:21:54 AM EDT] Job finished with exit code 0 ===
+=== Resubmitting job (attempt 1 / 10) ===
+Submitted batch job 8033890

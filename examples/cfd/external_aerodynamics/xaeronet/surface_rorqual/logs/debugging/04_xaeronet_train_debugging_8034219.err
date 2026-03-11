@@ -1,0 +1,5 @@
+wandb: Loaded settings from
+wandb:   /lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/wandb/settings
+wandb: Tracking run with wandb version 0.24.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /lustre10/scratch/htruchla/XAERONET/outputs/XAeroNetS_DEBUGSET/wandb/wandb/offline-run-20260311_084929-cfuzptny

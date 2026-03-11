@@ -1,0 +1,25 @@
+=== [Wed 11 Mar 2026 08:43:11 AM EDT] Training started (resubmission #8)===
+=== Nodes: rg[31903,32602] | Total GPUs (world size): 8 ===
+===  : rg31903 ===
+W&B offline. Running your script from this directory will only write metadata locally. Use `wandb disabled` to completely turn off W&B.
+ === RUNNING train_rorqual.py ===
+Training dataset size: 8
+Validation dataset size: 3
+Number of trainable parameters: 1378692
+Instantiated the model and optimizer
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth_b.pth
+Training already complete
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth_b.pth
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth_b.pth
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth_b.pth
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth_b.pth
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth_b.pth
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth_b.pth
+Checkpoint loaded: model_checkpoint_DEBUGSET.pth_b.pth
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /lustre10/scratch/htruchla/XAERONET/outputs/XAeroNetS_DEBUGSET/wandb/wandb/offline-run-20260311_084325-kyaxq72t[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/wandb/offline-run-20260311_084325-kyaxq72t/logs[0m
+=== [Wed 11 Mar 2026 08:43:30 AM EDT] Job finished with exit code 0 ===
+=== Resubmitting job (attempt 9 / 10) ===
+Submitted batch job 8034183
