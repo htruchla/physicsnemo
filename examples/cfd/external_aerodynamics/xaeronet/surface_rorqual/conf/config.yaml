@@ -17,9 +17,9 @@
 hydra:
   job:
     chdir: true
-    name: XAeroNetS_full_run_WITHCHECKPOINTS
+    name: XAeroNetS_2026_03_11
   run:
-    dir: /lustre10/scratch/htruchla/XAERONET/outputs/${hydra:job.name}
+    dir: /lustre10/scratch/htruchla/XAERONET/outputs/full_runs/${hydra:job.name}
 
 # ┌───────────────────────────────────────────┐
 # │            Data Preprocessing             │
@@ -48,7 +48,7 @@ partitions_path: /lustre10/scratch/htruchla/XAERONET/partitions_training        
 validation_partitions_path: /lustre10/scratch/htruchla/XAERONET/partitions_val  # Path to the validation partitions (.bin files)
 test_partitions_path: /lustre10/scratch/htruchla/XAERONET/partitions_test           # Path to the test partitions (.bin files)
 stats_file: global_stats.json                       # Path to the global statistics (.json file)
-checkpoint_filename: model_checkpoint_full_run_WITHCHECKPOINTS.pth           # Filename of the model checkpoint
+checkpoint_filename: model_checkpoint #removed .pth bc the train_rorqual.py script takes care of it            # Filename of the model checkpoint
 num_epochs: 2000 # changed to 10CHANGED FOR DEBUGGING                              # Number of epochs
 start_lr: 0.001                                     # Initial learning rate (cos annealing schedule is used)
 end_lr: 0.000001                                    # Final learning rate (cos annealing schedule is used)

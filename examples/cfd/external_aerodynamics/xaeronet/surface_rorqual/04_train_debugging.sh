@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=04_xaeronet_train_debugging
-#SBATCH --output=logs/debugging/04_xaeronet_train_debugging_%j.out
-#SBATCH --error=logs/debugging/04_xaeronet_train_debugging_%j.err
+#SBATCH --output=logs/debugging/2026_03_10/04_xaeronet_train_debugging_%j.out
+#SBATCH --error=logs/debugging/2026_03_10/04_xaeronet_train_debugging_%j.err
 #SBATCH --time=00:20:00
 #SBATCH --mem=256G
 #SBATCH --cpus-per-task=8         # CPU threads per GPU worker for data loading
@@ -34,8 +34,7 @@ source "$VENV_PATH/bin/activate"
 
 # ---------- Setup ----------
 cd $SLURM_SUBMIT_DIR
-mkdir -p logs tensorboard checkpoints 
-mkdir -p logs/full_run logs/debugging
+mkdir -p logs/debugging/2026_03_10 tensorboard checkpoints 
 
 # ---------- Distributed setup ----------
 export MASTER_ADDR=$(scontrol show hostname "$SLURM_NODELIST" | head -n 1)

@@ -17,9 +17,9 @@
 hydra:
   job:
     chdir: true
-    name: XAeroNetS_DEBUGSET
+    name: XAeroNetS_2026_03_10
   run:
-    dir: /lustre10/scratch/htruchla/XAERONET/outputs/${hydra:job.name}
+    dir: /lustre10/scratch/htruchla/XAERONET/outputs/debug_runs/${hydra:job.name}
 
 # ┌───────────────────────────────────────────┐
 # │            Data Preprocessing             │

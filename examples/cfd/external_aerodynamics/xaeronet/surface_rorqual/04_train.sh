@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=04_xaeronet_train
-#SBATCH --output=logs/full_run/04_xaeronet_train_%j.out
-#SBATCH --error=logs/full_run/04_xaeronet_train_%j.err
+#SBATCH --output=logs/full_runs/2026_03_11/04_xaeronet_train_%j.out
+#SBATCH --error=logs/full_runs/2026_03_11/04_xaeronet_train_%j.err
 #SBATCH --time=48:00:00
 #SBATCH --mem=256G
 #SBATCH --cpus-per-task=8         # CPU threads per GPU worker for data loading
@@ -15,8 +15,6 @@
 
 #SBATCH --gres=gpu:4              # increase when going to larger run GPUs per node — adjust to match ntasks-per-node
 #SBATCH --exclude=rg32601         #excluding suspected faulty node
-
-
 
 # ---------- Resubmission parameters ----------
 MAX_RESUBMISSIONS=10
@@ -36,8 +34,8 @@ source "$VENV_PATH/bin/activate"
 
 # ---------- Setup ----------
 cd $SLURM_SUBMIT_DIR
-mkdir -p logs tensorboard checkpoints 
-mkdir -p logs/full_run
+#make sure you set up with the current date
+mkdir -p logs/debugging/2026_03_11 tensorboard checkpoints
 
 # ---------- Distributed setup ----------
 export MASTER_ADDR=$(scontrol show hostname "$SLURM_NODELIST" | head -n 1)
