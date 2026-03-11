@@ -14,7 +14,7 @@
 #SBATCH --ntasks-per-node=4       # One task per GPU; must equal --gres=gpu:N below
 
 #SBATCH --gres=gpu:4              # increase when going to larger run GPUs per node — adjust to match ntasks-per-node
-#SBATCH --exclude=rg32601         #excluding suspected faulty node
+#SBATCH --exclude=rg32601,rg32503         #excluding suspected faulty node
 
 # ---------- Resubmission parameters ----------
 MAX_RESUBMISSIONS=10
@@ -44,12 +44,29 @@ export WORLD_SIZE=$SLURM_NTASKS   # nodes × ntasks-per-node = total GPUs
 
 # ---------- Run ----------
 # Force NCCL to use InfiniBand for inter-node communication
-export NCCL_SOCKET_IFNAME=ib
-export NCCL_IB_DISABLE=0
 
-echo "=== [$(date)] Training started (resubmission #${RESUBMIT_COUNT})==="
-echo "=== Nodes: $SLURM_NODELIST | Total GPUs (world size): $WORLD_SIZE ==="
-echo "===  : $MASTER_ADDR ==="
+#DEBUGGING
+export NCCL_DEBUG=INFO
+export NCCL_DEBUG_SUBSYS=ALL
+export NCCL_IB_DISABLE=1
+export NCCL_P2P_DISABLE=1
+export NCCL_TIMEOUT=1800000
+export TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=1800 
+export TORCH_NCCL_ENABLE_MONITORING=1
+export TORCH_DISTRIBUTED_DEBUG=DETAIL
+
+ulimit -c unlimited 
+export PYTHONFAULTHANDLER=1
+export CUDA_LAUNCH_BLOCKING=1
+
+echo "=== [$(date)] Debug job started ==="
+echo "=== Nodes: $SLURM_NODELIST ==="
+echo "=== Master: $MASTER_ADDR | World size: $WORLD_SIZE ==="
+
+#quick cinnectivity test before training
+echo "=== Testing inter-node GPU connectivity ==="
+srun --ntasks=$WORLD_SIZE bash -c 'echo "Rank $SLURM_PROCID on $(hostname) — GPU $SLURM_LOCALID ready"'
+
 
 wandb offline #MAKE SURE wandb IS OFFLINE WHEN RUNNING ON RORQUAL/NARVAL/TamIA, IT WILL CRASH OTHERWISE BC IT IS TRYING TO SYNC ONLINE
 
@@ -60,19 +77,16 @@ EXIT_CODE=$?
 echo "=== [$(date)] Job finished with exit code $EXIT_CODE ==="
 
 # ---------- Resubmit if needed ----------
-if [ $EXIT_CODE -eq 0 ]; then
-    if [ -f "training_complete.flag" ]; then
-        echo "=== Training is fully complete. Not resubmitting. ==="
-    elif [ "$RESUBMIT_COUNT" -lt "$MAX_RESUBMISSIONS" ]; then
+if [ ! -f "training_complete.flag" ]; then
+    if [ "$RESUBMIT_COUNT" -lt "$MAX_RESUBMISSIONS" ]; then
         NEW_COUNT=$((RESUBMIT_COUNT + 1))
         echo "=== Resubmitting job (attempt $NEW_COUNT / $MAX_RESUBMISSIONS) ==="
         sbatch --export=ALL,RESUBMIT_COUNT=$NEW_COUNT "$0"
     else
         echo "=== Reached MAX_RESUBMISSIONS ($MAX_RESUBMISSIONS). Not resubmitting. ==="
     fi
-
+else
+    echo "=== Training is fully complete. Not resubmitting. ==="
+fi
 exit $EXIT_CODE
-
-
-
 
