@@ -63,17 +63,15 @@ echo "=== [$(date)] Job finished with exit code $EXIT_CODE ==="
 
 # ---------- Resubmit if needed ----------
 if [ $EXIT_CODE -eq 0 ]; then
-    #check if the training completed by comparing the checkpoint epoch vs total number of epochs
-    if [ "$RESUBMIT_COUNT" -lt "$MAX_RESUBMISSIONS" ]; then
+    if [ -f "training_complete.flag" ]; then
+        echo "=== Training is fully complete. Not resubmitting. ==="
+    elif [ "$RESUBMIT_COUNT" -lt "$MAX_RESUBMISSIONS" ]; then
         NEW_COUNT=$((RESUBMIT_COUNT + 1))
         echo "=== Resubmitting job (attempt $NEW_COUNT / $MAX_RESUBMISSIONS) ==="
         sbatch --export=ALL,RESUBMIT_COUNT=$NEW_COUNT "$0"
     else
         echo "=== Reached MAX_RESUBMISSIONS ($MAX_RESUBMISSIONS). Not resubmitting. ==="
     fi
-elif [ $EXIT_CODE -ne 0 ]; then
-    echo "=== Training failed (exit code $EXIT_CODE). NOT resubmitting automatically. ==="
-fi
 
 exit $EXIT_CODE
 

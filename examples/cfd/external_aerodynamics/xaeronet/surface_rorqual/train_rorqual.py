@@ -427,6 +427,9 @@ def main(cfg: DictConfig) -> None:
             "final_model_checkpoint.pth",
         )
         print("Training complete")
+        with open("training_complete.flag", "w") as f:
+            f.write("done")
+            
 
 
 if __name__ == "__main__":
