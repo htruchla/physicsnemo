@@ -1,0 +1,245 @@
+wandb: Loaded settings from
+wandb:   /lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/wandb/settings
+wandb: Tracking run with wandb version 0.24.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /lustre10/scratch/htruchla/XAERONET/outputs/full_runs/XAeroNetS_2026_03_11/wandb/wandb/offline-run-20260312_092933-2ne4uwb3
+[rank4]:[E312 09:39:56.976700819 ProcessGroupGloo.cpp:143] Rank 4 successfully reached monitoredBarrier, but received errors while waiting for send/recv from rank 0. Please check rank 0 logs for faulty rank.
+[rank5]:[E312 09:39:56.976704848 ProcessGroupGloo.cpp:143] Rank 5 successfully reached monitoredBarrier, but received errors while waiting for send/recv from rank 0. Please check rank 0 logs for faulty rank.
+[rank6]:[E312 09:39:56.976700851 ProcessGroupGloo.cpp:143] Rank 6 successfully reached monitoredBarrier, but received errors while waiting for send/recv from rank 0. Please check rank 0 logs for faulty rank.
+[rank7]:[E312 09:39:56.976706686 ProcessGroupGloo.cpp:143] Rank 7 successfully reached monitoredBarrier, but received errors while waiting for send/recv from rank 0. Please check rank 0 logs for faulty rank.
+Error executing job with overrides: []
+Error executing job with overrides: []
+Error executing job with overrides: []
+Error executing job with overrides: []
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 236, in main
+    scaler.scale(loss).backward()
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 236, in main
+    scaler.scale(loss).backward()
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 236, in main
+    scaler.scale(loss).backward()
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 236, in main
+    scaler.scale(loss).backward()
+RuntimeError: Rank 6 successfully reached monitoredBarrier, but received errors while waiting for send/recv from rank 0. Please check rank 0 logs for faulty rank.
+ Original exception: 
+[/shared_tmp/build_wheels_tmp.337748/python-3.10/torch/third_party/gloo/gloo/transport/tcp/unbound_buffer.cc:81] Timed out waiting 600000ms for recv operation to complete
+RuntimeError: Rank 4 successfully reached monitoredBarrier, but received errors while waiting for send/recv from rank 0. Please check rank 0 logs for faulty rank.
+ Original exception: 
+[/shared_tmp/build_wheels_tmp.337748/python-3.10/torch/third_party/gloo/gloo/transport/tcp/unbound_buffer.cc:81] Timed out waiting 600000ms for recv operation to complete
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+RuntimeError: Rank 7 successfully reached monitoredBarrier, but received errors while waiting for send/recv from rank 0. Please check rank 0 logs for faulty rank.
+ Original exception: 
+[/shared_tmp/build_wheels_tmp.337748/python-3.10/torch/third_party/gloo/gloo/transport/tcp/unbound_buffer.cc:81] Timed out waiting 600000ms for recv operation to complete
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Rank 5 successfully reached monitoredBarrier, but received errors while waiting for send/recv from rank 0. Please check rank 0 logs for faulty rank.
+ Original exception: 
+[/shared_tmp/build_wheels_tmp.337748/python-3.10/torch/third_party/gloo/gloo/transport/tcp/unbound_buffer.cc:81] Timed out waiting 600000ms for recv operation to complete
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Exception ignored in atexit callback: <staticmethod(<function DistributedManager.cleanup at 0x15386ca26440>)>
+Exception ignored in atexit callback: <staticmethod(<function DistributedManager.cleanup at 0x14da4c806440>)>
+Exception ignored in atexit callback: <staticmethod(<function DistributedManager.cleanup at 0x14a434e12440>)>
+Traceback (most recent call last):
+Exception ignored in atexit callback: <staticmethod(<function DistributedManager.cleanup at 0x154738e26440>)>
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/distributed/manager.py", line 813, in cleanup
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/distributed/manager.py", line 813, in cleanup
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/distributed/manager.py", line 813, in cleanup
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/distributed/manager.py", line 813, in cleanup
+    dist.barrier(device_ids=[DistributedManager().local_rank])
+    dist.barrier(device_ids=[DistributedManager().local_rank])
+    dist.barrier(device_ids=[DistributedManager().local_rank])
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+    dist.barrier(device_ids=[DistributedManager().local_rank])
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+    return func(*args, **kwargs)
+    return func(*args, **kwargs)
+    return func(*args, **kwargs)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 4159, in barrier
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 4159, in barrier
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 4159, in barrier
+    return func(*args, **kwargs)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 4159, in barrier
+    work = group.barrier(opts=opts)
+    work = group.barrier(opts=opts)
+    work = group.barrier(opts=opts)
+RuntimeError: ProcessGroupWrapper: Monitored Barrier encountered error running collective: CollectiveFingerPrint(SequenceNumber=3OpType=BARRIER). Error: 
+RuntimeError: ProcessGroupWrapper: Monitored Barrier encountered error running collective: CollectiveFingerPrint(SequenceNumber=3OpType=BARRIER). Error: 
+Application timeout caused pair closure
+RuntimeError: ProcessGroupWrapper: Monitored Barrier encountered error running collective: CollectiveFingerPrint(SequenceNumber=3OpType=BARRIER). Error: 
+Application timeout caused pair closure
+Application timeout caused pair closure
+    work = group.barrier(opts=opts)
+RuntimeError: ProcessGroupWrapper: Monitored Barrier encountered error running collective: CollectiveFingerPrint(SequenceNumber=3OpType=BARRIER). Error: 
+Application timeout caused pair closure
+[rank4]:[W312 09:39:56.517060738 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+[rank1]:[E312 09:39:56.273663243 ProcessGroupGloo.cpp:143] Rank 1 successfully reached monitoredBarrier, but received errors while waiting for send/recv from rank 0. Please check rank 0 logs for faulty rank.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 236, in main
+    scaler.scale(loss).backward()
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Rank 1 successfully reached monitoredBarrier, but received errors while waiting for send/recv from rank 0. Please check rank 0 logs for faulty rank.
+ Original exception: 
+[/shared_tmp/build_wheels_tmp.337748/python-3.10/torch/third_party/gloo/gloo/transport/tcp/unbound_buffer.cc:81] Timed out waiting 600000ms for recv operation to complete
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Exception ignored in atexit callback: <staticmethod(<function DistributedManager.cleanup at 0x146990226440>)>
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/distributed/manager.py", line 813, in cleanup
+    dist.barrier(device_ids=[DistributedManager().local_rank])
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+    return func(*args, **kwargs)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 4159, in barrier
+    work = group.barrier(opts=opts)
+RuntimeError: ProcessGroupWrapper: Monitored Barrier encountered error running collective: CollectiveFingerPrint(SequenceNumber=3OpType=BARRIER). Error: 
+Application timeout caused pair closure
+srun: error: rg31605: task 4: Exited with exit code 1
+srun: error: rg31605: task 7: Exited with exit code 1
+srun: error: rg31605: task 6: Exited with exit code 1
+srun: error: rg31605: task 5: Exited with exit code 1
+srun: error: rg31602: task 1: Exited with exit code 1
+[rank0]:[E312 09:40:06.286557535 ProcessGroupGloo.cpp:3011] [Rank 0]: Rank 3 failed to pass monitoredBarrier in 600000 ms
+[rank0]:[E312 09:40:06.286578640 ProcessGroupGloo.cpp:143] [Rank 0]: Ranks 3 failed to pass monitoredBarrier in 600000 ms
+[rank2]:[E312 09:40:06.286577466 ProcessGroupGloo.cpp:143] Rank 2 successfully reached monitoredBarrier, but received errors while waiting for send/recv from rank 0. Please check rank 0 logs for faulty rank.
+Error executing job with overrides: []
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 236, in main
+    scaler.scale(loss).backward()
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Rank 2 successfully reached monitoredBarrier, but received errors while waiting for send/recv from rank 0. Please check rank 0 logs for faulty rank.
+ Original exception: 
+[/shared_tmp/build_wheels_tmp.337748/python-3.10/torch/third_party/gloo/gloo/transport/tcp/unbound_buffer.cc:81] Timed out waiting 600000ms for recv operation to complete
+Traceback (most recent call last):
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 236, in main
+    scaler.scale(loss).backward()
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Exception ignored in atexit callback: <staticmethod(<function DistributedManager.cleanup at 0x1537a883e440>)>
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/distributed/manager.py", line 813, in cleanup
+RuntimeError: [Rank 0]: Ranks 3 failed to pass monitoredBarrier in 600000 ms
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+    dist.barrier(device_ids=[DistributedManager().local_rank])
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+    return func(*args, **kwargs)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 4159, in barrier
+    work = group.barrier(opts=opts)
+RuntimeError: ProcessGroupWrapper: Monitored Barrier encountered error running collective: CollectiveFingerPrint(SequenceNumber=3OpType=BARRIER). Error: 
+Application timeout caused pair closure
+Exception ignored in atexit callback: <staticmethod(<function DistributedManager.cleanup at 0x15154500e440>)>
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/distributed/manager.py", line 813, in cleanup
+    dist.barrier(device_ids=[DistributedManager().local_rank])
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+    return func(*args, **kwargs)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 4159, in barrier
+    work = group.barrier(opts=opts)
+RuntimeError: ProcessGroupWrapper: Monitored Barrier encountered error running collective: CollectiveFingerPrint(SequenceNumber=3OpType=BARRIER). Error: 
+[/shared_tmp/build_wheels_tmp.337748/python-3.10/torch/third_party/gloo/gloo/transport/tcp/pair.cc:534] Connection closed by peer [10.83.96.102]:50582
+[rank0]:[W312 09:40:07.839596819 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+[rank3]:[W312 09:40:08.069720408 TCPStore.cpp:141] [c10d] recvValue failed on SocketImpl(fd=30, addr=[rg31602.rorqual.calcul.quebec]:44090, remote=[rg31602.rorqual.calcul.quebec]:29500): failed to recv, got 0 bytes
+Exception raised from recvBytes at /shared_tmp/build_wheels_tmp.337748/python-3.10/torch/torch/csrc/distributed/c10d/Utils.hpp:670 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x97 (0x14d026f901a7 in /home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x54d4ba1 (0x14d0596dcba1 in /home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x54d5d9d (0x14d0596ddd9d in /home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x54d6ef8 (0x14d0596deef8 in /home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x20d (0x14d0596d933d in /home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::heartbeatMonitor() + 0x37c (0x14d0283d0f7c in /home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xe07f0 (0x14d06e4e07f0 in /cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/lib/gcc/x86_64-pc-linux-gnu/14/libstdc++.so.6)
+frame #7: <unknown function> + 0x84a9d (0x14d0734afa9d in /cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/lib64/libc.so.6)
+frame #8: <unknown function> + 0x10509c (0x14d07353009c in /cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/lib64/libc.so.6)
+
+[rank3]:[W312 09:40:08.079241327 ProcessGroupNCCL.cpp:1411] [PG ID 0 PG GUID 0 Rank 3] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: failed to recv, got 0 bytes
+Exception raised from recvBytes at /shared_tmp/build_wheels_tmp.337748/python-3.10/torch/torch/csrc/distributed/c10d/Utils.hpp:670 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x97 (0x14d026f901a7 in /home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x54d4ba1 (0x14d0596dcba1 in /home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x54d5d9d (0x14d0596ddd9d in /home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x54d6ef8 (0x14d0596deef8 in /home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x20d (0x14d0596d933d in /home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::heartbeatMonitor() + 0x37c (0x14d0283d0f7c in /home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xe07f0 (0x14d06e4e07f0 in /cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/lib/gcc/x86_64-pc-linux-gnu/14/libstdc++.so.6)
+frame #7: <unknown function> + 0x84a9d (0x14d0734afa9d in /cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/lib64/libc.so.6)
+frame #8: <unknown function> + 0x10509c (0x14d07353009c in /cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/lib64/libc.so.6)
+
+srun: error: rg31602: task 0: Exited with exit code 1
+srun: error: rg31602: task 2: Exited with exit code 1
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/examples/cfd/external_aerodynamics/xaeronet/surface_rorqual/train_rorqual.py", line 236, in main
+    scaler.scale(loss).backward()
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: ProcessGroupWrapper: Monitored Barrier encountered error running collective: CollectiveFingerPrint(SequenceNumber=3, OpType=ALLREDUCE, TensorShape=[292], TensorDtypes=Int, TensorDeviceTypes=TensorOptions(dtype=float (default), device=cuda, layout=Strided (default), requires_grad=false (default), pinned_memory=false (default), memory_format=(nullopt))). Error: 
+[/shared_tmp/build_wheels_tmp.337748/python-3.10/torch/third_party/gloo/gloo/transport/tcp/pair.cc:534] Connection closed by peer [10.83.96.102]:16015
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Exception ignored in atexit callback: <staticmethod(<function DistributedManager.cleanup at 0x14cfb4ffe440>)>
+Traceback (most recent call last):
+  File "/lustre09/project/6003252/htruchla/physicsnemo/physicsnemo/distributed/manager.py", line 813, in cleanup
+    dist.barrier(device_ids=[DistributedManager().local_rank])
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+    return func(*args, **kwargs)
+  File "/home/htruchla/envs/xaeronet/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 4159, in barrier
+    work = group.barrier(opts=opts)
+RuntimeError: ProcessGroupWrapper: Monitored Barrier encountered error running collective: CollectiveFingerPrint(SequenceNumber=3OpType=BARRIER). Error: 
+[/shared_tmp/build_wheels_tmp.337748/python-3.10/torch/third_party/gloo/gloo/transport/tcp/pair.cc:534] Connection closed by peer [10.83.96.102]:16015
+srun: error: rg31602: task 3: Exited with exit code 1
+sbatch: NOTE: Your memory request of 262144.0M was likely submitted as 256.0G. Please note that Slurm interprets memory requests denominated in G as multiples of 1024M, not 1000M.
