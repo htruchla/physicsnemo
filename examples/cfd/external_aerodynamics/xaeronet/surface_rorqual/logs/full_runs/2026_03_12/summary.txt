@@ -1,0 +1,5 @@
+- GLOO_SOCKET_IFNAME=ib0 - Gloo was routing through ethernet (10.83.x.x) instead of InfiniBand (10.85.x.x), causing the recv timeouts during the backwards pass barriers/
+- also makes NCCL bootstrap explicit on IB as well 
+- NCCL_IB_DISABLE=0 - explicitly keeps IB on. 
+- GLOO_TIMEOUT_SECONDS=3600 - raises Gloo's default 600s timeout as a safety net
+- Added $RESUBMIT_COUNT to the startup echo so you can tell right away in the logs which attempt you are looking at 

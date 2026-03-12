@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=04_xaeronet_train
-#SBATCH --output=logs/full_runs/2026_03_11/04_xaeronet_train_%j.out
-#SBATCH --error=logs/full_runs/2026_03_11/04_xaeronet_train_%j.err
+#SBATCH --output=logs/full_runs/2026_03_12/04_xaeronet_train_%j.out
+#SBATCH --error=logs/full_runs/2026_03_12/04_xaeronet_train_%j.err
 #SBATCH --time=48:00:00
 #SBATCH --mem=256G
 #SBATCH --cpus-per-task=8         # CPU threads per GPU worker for data loading
@@ -14,7 +14,7 @@
 #SBATCH --ntasks-per-node=4       # One task per GPU; must equal --gres=gpu:N below
 
 #SBATCH --gres=gpu:4              # increase when going to larger run GPUs per node — adjust to match ntasks-per-node
-#SBATCH --exclude=rg32601,rg32503         #excluding suspected faulty node
+#SBATCH --exclude=rg32601,rg32503,rg31602,rg31605,rg32403,rg32602
 
 # ---------- Resubmission parameters ----------
 MAX_RESUBMISSIONS=10
@@ -35,7 +35,7 @@ source "$VENV_PATH/bin/activate"
 # ---------- Setup ----------
 cd $SLURM_SUBMIT_DIR
 #make sure you set up with the current date
-mkdir -p logs/debugging/2026_03_11 tensorboard checkpoints
+mkdir -p logs/debugging/2026_03_12 tensorboard checkpoints
 
 # ---------- Distributed setup ----------
 export MASTER_ADDR=$(scontrol show hostname "$SLURM_NODELIST" | head -n 1)
@@ -45,20 +45,27 @@ export WORLD_SIZE=$SLURM_NTASKS   # nodes × ntasks-per-node = total GPUs
 # ---------- Run ----------
 # Force NCCL to use InfiniBand for inter-node communication
 
+export NCCL_SOCKET_IFNAME=ib0
+export GLOO_SOCKET_IFNAME=ib0          # <-- KEY FIX: was missing, Gloo was using ethernet
+export NCCL_IB_DISABLE=0              # explicitly keep IB enabled for NCCL
+export NCCL_TIMEOUT=1800000
+export TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=1800
+export TORCH_NCCL_ENABLE_MONITORING=1
+export GLOO_TIMEOUT_SECONDS=3600 
+
+
 #DEBUGGING
 export NCCL_DEBUG=INFO
 export NCCL_DEBUG_SUBSYS=ALL
-export NCCL_TIMEOUT=1800000
-export TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=1800 
-export TORCH_NCCL_ENABLE_MONITORING=1
 export TORCH_DISTRIBUTED_DEBUG=DETAIL
-
-ulimit -c unlimited 
+export HYDRA_FULL_ERROR=1
 export PYTHONFAULTHANDLER=1
+ulimit -c unlimited
 
-echo "=== [$(date)] Debug job started ==="
+echo "=== [$(date)] Job started ==="
 echo "=== Nodes: $SLURM_NODELIST ==="
 echo "=== Master: $MASTER_ADDR | World size: $WORLD_SIZE ==="
+echo "=== Resubmit count: $RESUBMIT_COUNT / $MAX_RESUBMISSIONS ==="
 
 #quick cinnectivity test before training
 echo "=== Testing inter-node GPU connectivity ==="
@@ -85,5 +92,6 @@ if [ ! -f "training_complete.flag" ]; then
 else
     echo "=== Training is fully complete. Not resubmitting. ==="
 fi
+
 exit $EXIT_CODE
 
