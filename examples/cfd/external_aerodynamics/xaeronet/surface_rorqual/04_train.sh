@@ -48,8 +48,6 @@ export WORLD_SIZE=$SLURM_NTASKS   # nodes × ntasks-per-node = total GPUs
 #DEBUGGING
 export NCCL_DEBUG=INFO
 export NCCL_DEBUG_SUBSYS=ALL
-export NCCL_IB_DISABLE=1
-export NCCL_P2P_DISABLE=1
 export NCCL_TIMEOUT=1800000
 export TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=1800 
 export TORCH_NCCL_ENABLE_MONITORING=1
@@ -57,7 +55,6 @@ export TORCH_DISTRIBUTED_DEBUG=DETAIL
 
 ulimit -c unlimited 
 export PYTHONFAULTHANDLER=1
-export CUDA_LAUNCH_BLOCKING=1
 
 echo "=== [$(date)] Debug job started ==="
 echo "=== Nodes: $SLURM_NODELIST ==="
